@@ -54,8 +54,11 @@ i skutki, potem następna decyzja. Duże tematy dzielisz na krótkie moduły, ni
 - Glosariusz: pojęcia własne projektu przez „nazwa", nie kod. Identyfikatory w kodzie: polskie, bez ogonków.
 - Kanon a parametr: mechanizm to kanon, nastawa to parametr organizatora. Parametr nie ma wartości domyślnej.
 - Hierarchia źródeł: glosariusz definiuje pojęcia, ADR rozstrzyga mechanikę — gdy oba mówią co innego o mechanice, obowiązuje ADR, a rozbieżność zgłaszasz jako punkt otwarty, nie poprawiasz po cichu w glosariuszu.
-- Gołe słowo „sesja" jest zakazane. Cztery dozwolone nazwy: „sesja gry", „sesja logowania", „ważność meldunku", „sesja pracy" (praca z Claude Code).
+- Gołe słowo „sesja" jest zakazane. Pięć dozwolonych nazw: „sesja gry", „sesja logowania", „ważność meldunku", „sesja pracy" (praca z Claude Code),
+  „sesja emisji" (Rezonator Kwantowy, start i stop ręczny).
   Zakres: dokumenty, ADR-y, glosariusz, Ziarna. Nie obejmuje identyfikatorów w kodzie — te zmieniasz wyłącznie przy okazji pracy nad danym modułem, nigdy hurtem.
+  Nie obejmuje też nazw plików już zapisanych, w szczególności Ziaren Transferu: nazwa pliku jest identyfikatorem zamkniętego zapisu, nie tekstem dokumentu.
+  Wiersze zaległe w dokumentach modułów, ROADMAPA_BACKEND, MAPA_PROJEKTU, mapa_projektu.json, README i docs/superpowers poprawiasz wyłącznie przy okazji pracy nad danym plikiem — osobnego zadania z tego nie robisz.
 
 ## 6. Rejestr komunikacji — obowiązek na zamknięcie sesji pracy
 

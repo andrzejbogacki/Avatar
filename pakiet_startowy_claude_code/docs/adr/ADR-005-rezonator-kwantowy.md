@@ -25,7 +25,7 @@ emisji oraz podział wdrożenia Home Assistant na fazy.
    sub (<20 Hz) i ultra (>20 kHz) zdefiniowane, DOMYŚLNIE WYŁĄCZONE
    (uwaga sprzętowa) — włączane parametrem konfiguracji.
 4. **Wdrożenie fazowe:** Faza A (ta implementacja) — warstwa logiczna,
-   integracja QAC request-response, API REST, sesje ręczne, synteza
+   integracja QAC request-response, API REST, ręczne sesje emisji, synteza
    WebAudio w panelu dev. Faza B — klient HA + encje (wymaga instancji
    HA i tokenu). Faza C — mosty DMX/MIDI + automatyka warunkowa.
    Fazy B i C: osobne zatwierdzenia przed implementacją.
@@ -44,6 +44,6 @@ emisji oraz podział wdrożenia Home Assistant na fazy.
   kontraktu QAC `wczytajProfil` (bez sięgania do wnętrza modułu);
   częstotliwość spersonalizowana = czestotliwosc_odniesienia_hz ×
   czynnik_modulacji [wniosek logiczny — formuła robocza, spójna
-  z O7 QAC]; brak profilu = jawny status brak_danych, sesja może
-  trwać na źródłach Solfeggio/planetarnych.
+  z O7 QAC]; brak profilu = jawny status brak_danych, sesja emisji
+  może trwać na źródłach Solfeggio/planetarnych.
 - Pasma wyłączone → żądanie emisji poza pasmem = jawna odmowa.
