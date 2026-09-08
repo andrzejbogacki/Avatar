@@ -1,0 +1,332 @@
+{
+    "protokol_suwerennosci": {
+        "suweren": "Andrzej Bogacki",
+        "avatar_id": "andrzej_bogacki",
+        "logika_certyfikacji": {
+            "zasada_nadrzedna": "Ten kto certyfikuje, poświadcza swoją prawdę.",
+            "warstwy": {
+                "autocertyfikacja": "Każdy Avatar certyfikuje własne jakości i wartości (parametry protokołu). Akt = samopoświadczenie prawdy certyfikującego.",
+                "certyfikacja_zewnetrzna": "Inni Avatarowie certyfikują nasze parametry w celu wzmocnienia wiarygodności lub weryfikacji prawdy."
+            },
+            "typy_certyfikatu": [
+                "auto",
+                "wzmocnienie",
+                "weryfikacja"
+            ],
+            "poziomy": [
+                "uczeń",
+                "mistrz"
+            ],
+            "wiarygodnosc": "Suma prawd certyfikujących. Parametr rośnie liczbą i wagą poświadczeń suwerennych."
+        },
+        "moduly": [
+            {
+                "numer": 1,
+                "nazwa": "Jakości Kwantowe — Talenty Avatara",
+                "opis": "Narzędzie doskonalenia mistrzostwa Avatara. Filtr jakości relacji.",
+                "ontologia": {
+                    "obserwator": {
+                        "pozycja": 9,
+                        "rola": "Avatar — obserwator ponad osiami, punkt odczytu par 3-6, meta-regulator obiegu",
+                        "wnosi_w_relacje": {
+                            "zasilanie": 3,
+                            "forma_materializacji": 6
+                        }
+                    }
+                },
+                "matryca": [
+                    {
+                        "os": 1,
+                        "zasilanie_3": "Wolność",
+                        "forma_6": "Akceptacja",
+                        "certyfikacja": {
+                            "poziom_3": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "mistrz",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            },
+                            "poziom_6": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "mistrz",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            }
+                        }
+                    },
+                    {
+                        "os": 2,
+                        "zasilanie_3": "Mądrość",
+                        "forma_6": "Piękno",
+                        "certyfikacja": {
+                            "poziom_3": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "uczeń",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            },
+                            "poziom_6": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "uczeń",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            }
+                        }
+                    },
+                    {
+                        "os": 3,
+                        "zasilanie_3": "Sprawiedliwość",
+                        "forma_6": "Dobro",
+                        "certyfikacja": {
+                            "poziom_3": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "uczeń",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            },
+                            "poziom_6": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "uczeń",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            }
+                        }
+                    },
+                    {
+                        "os": 4,
+                        "zasilanie_3": "Odpowiedzialność",
+                        "forma_6": "Prawda",
+                        "certyfikacja": {
+                            "poziom_3": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "uczeń",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            },
+                            "poziom_6": {
+                                "autocertyfikat": {
+                                    "poswiadczajacy": "andrzej_bogacki",
+                                    "typ": "auto",
+                                    "poziom": "uczeń",
+                                    "sygnatura_prawdy": null
+                                },
+                                "certyfikaty_zewnetrzne": []
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "numer": 2,
+                "nazwa": "Akceptowane Symulacje (Gry)",
+                "opis": "Rejestr deklaracji akceptacji Avatara wobec systemów rzeczywistości (gier). Akceptacja jako parametr suwerennej decyzji, nie przynależności.",
+                "logika_akceptacji": {
+                    "skala": [
+                        "pełna",
+                        "warunkowa",
+                        "brak"
+                    ],
+                    "zasada": "Avatar (obserwator 9) deklaruje stan akceptacji wobec każdej symulacji. Akceptacja warunkowa wymaga jawnego pola 'warunek' definiującego zakres i koszt uczestnictwa."
+                },
+                "rejestr_symulacji": [
+                    {
+                        "symulacja": "Polska.3D",
+                        "akceptacja": "warunkowa",
+                        "warunek": {
+                            "zakres": "Zakres transakcyjny zdefiniowany przez suwerena",
+                            "waluta": "PLN"
+                        },
+                        "opis": "Uczestnictwo instrumentalne, ograniczone do zdefiniowanego zakresu transakcyjnego."
+                    },
+                    {
+                        "symulacja": "UE.3D",
+                        "akceptacja": "brak",
+                        "warunek": null,
+                        "opis": "Symulacja odrzucona, poza obiegiem suwerennym."
+                    },
+                    {
+                        "symulacja": "Nowa Ziemia",
+                        "akceptacja": "pełna",
+                        "warunek": null,
+                        "opis": "Projekt nadrzędny, docelowa architektura."
+                    }
+                ]
+            },
+            {
+                "numer": 3,
+                "nazwa": "Tokeny — Systemy Wymiany",
+                "opis": "Akceptowane przez Avatara systemy wymiany energii, uwagi i wartości. Token jako nośnik wymiany w obiegu suwerennym.",
+                "logika_akceptacji": {
+                    "skala": [
+                        "pełna",
+                        "warunkowa",
+                        "brak"
+                    ],
+                    "zasada": "Avatar (obserwator 9) deklaruje stan akceptacji wobec każdego systemu wymiany. Akceptacja warunkowa wymaga jawnego pola 'warunek'."
+                },
+                "rejestr_tokenow": [
+                    {
+                        "token": "Avatar Token",
+                        "akceptacja": "pełna",
+                        "warunek": null,
+                        "mapowanie_369": null,
+                        "opis": "Nośnik wewnętrzny architektury suwerennej."
+                    },
+                    {
+                        "token": "Volt Token (Vote Token)",
+                        "akceptacja": "pełna",
+                        "warunek": null,
+                        "mapowanie_369": {
+                            "zasilanie_3": "Napięcie — energia wprowadzana w struktury Nowej Ziemi",
+                            "forma_6": "Głosowanie — materializacja napięcia w alokacji procentowej",
+                            "stabilizator_9": "System dystrybucji — przelicza sumę napięć i uziemia ją w realnym przepływie zasobów"
+                        },
+                        "mechanika": {
+                            "jednostka_wejsciowa": "1 Volt Token na aktywnego Avatara",
+                            "zasada_rownosci": "Jeden suweren = jedna jednostka energii",
+                            "dystrybucja": "Procentowa alokacja 100% napięcia wg woli Avatara",
+                            "alokacja": "płynna",
+                            "redystrybucja": "Avatar może w dowolnym momencie zmieniać rozkład procentowy",
+                            "efekt_systemowy": "System kieruje energię i zasoby proporcjonalnie do sumy otrzymanego napięcia",
+                            "cele_glosowania": [
+                                "Avatarowie",
+                                "projekty",
+                                "źródła",
+                                "inne formy i struktury Nowej Ziemi"
+                            ]
+                        },
+                        "integracja_aplikacji": {
+                            "zagniezdzenie": "Volt Token wbudowany w aplikację jako natywny moduł głosowania",
+                            "cel_ux": "Łatwe głosowanie Avatarów na ich projekty, źródła oraz formy i struktury Nowej Ziemi"
+                        },
+                        "opis": "Napięcie zasilające struktury Nowej Ziemi. Głos = akt przekazania energii."
+                    },
+                    {
+                        "token": "PLN",
+                        "akceptacja": "warunkowa",
+                        "warunek": {
+                            "zakres": "Ograniczenia technologiczno-systemowe",
+                            "powiazanie": "Przymus uczestnictwa w symulacji Polska.3D (Moduł 2)"
+                        },
+                        "mapowanie_369": null,
+                        "opis": "Element zewnętrznej matrycy, akceptowany instrumentalnie wskutek ograniczeń systemowych."
+                    }
+                ]
+            },
+            {
+                "numer": 4,
+                "nazwa": "Protokół Relacji — Zasady Dostępu",
+                "opis": "Meta-regulator uprawnień. Konfiguruje prawo dostępu do Avatara oraz do wiedzy o nim na różnych poziomach i w różnych modułach. Spina moduły wymagające kontroli dostępu.",
+                "ontologia": {
+                    "rola_systemowa": "Kontroler obiegu (analogia pozycji 9) — nie element relacji, lecz regulator jej dopuszczalności.",
+                    "zasada_nadrzedna": "Im wyższa jakość właściciela na danej osi, tym wyższy próg wejścia dla obserwatora. Ochrona zasilania Avatara."
+                },
+                "hierarchia_poziomow": {
+                    "drabina": [
+                        "niesklasyfikowany",
+                        "uczeń",
+                        "adept",
+                        "mistrz"
+                    ],
+                    "definicje": {
+                        "niesklasyfikowany": "Ten, który nie zdefiniował swoich uprawnień — klasyfikacja go nie zainteresowała. System czyta brak deklaracji (pole null), nie powód braku. Traktowany jako poza obiegiem (Default Deny).",
+                        "uczeń": "Ten, kto się zainteresował i zaczyna wdrażać jakości danej osi.",
+                        "adept": "Ten, kto opanował sztukę danej osi i jej jakości kwantowych.",
+                        "mistrz": "Pełne mistrzostwo jakości danej osi."
+                    }
+                },
+                "stany_dostepu": {
+                    "enum": [
+                        "brak",
+                        "warunkowy",
+                        "akceptacja",
+                        "dozwolony"
+                    ],
+                    "gradient_progu": "brak < warunkowy < akceptacja < dozwolony",
+                    "definicje": {
+                        "brak": "Default Deny. Brak prawa do relacji.",
+                        "warunkowy": "Najcięższy próg wejścia. Wymaga mechanizmu zgody na kontakt.",
+                        "akceptacja": "Lżejszy próg. Akt uznania między równymi lub wyższymi poziomami.",
+                        "dozwolony": "Dostęp otwarty, bez bramki."
+                    }
+                },
+                "strumien_1_dostep_relacyjny": {
+                    "opis": "Prawo do relacji z Avatarem. Bramka oparta na poziomie certyfikacji obserwatora względem poziomu właściciela na danej osi.",
+                    "zakres": "per oś — reguły definiowane dla każdej osi Modułu 1 oraz przyszłych modułów o tej samej mechanice (jakości/wartości Avatara).",
+                    "model_konfiguracji": {
+                        "tryb": "ustawienia domyślne z możliwością nadpisania ręcznego",
+                        "domyslne": "przycisk 'uzupełnij domyślnie' wpisuje macierz domyślną",
+                        "nadpisanie": "ręczna zmiana pojedynczych par właściciel-obserwator",
+                        "profile": "slot na zdefiniowane w przyszłości profile dostępu"
+                    },
+                    "macierz_domyslna": {
+                        "mistrz": {
+                            "niesklasyfikowany": "brak",
+                            "uczeń": "warunkowy",
+                            "adept": "dozwolony",
+                            "mistrz": "dozwolony"
+                        },
+                        "adept": {
+                            "niesklasyfikowany": "warunkowy",
+                            "uczeń": "warunkowy",
+                            "adept": "akceptacja",
+                            "mistrz": "akceptacja"
+                        },
+                        "uczeń": {
+                            "niesklasyfikowany": "warunkowy",
+                            "uczeń": "dozwolony",
+                            "adept": "dozwolony",
+                            "mistrz": "dozwolony"
+                        },
+                        "niesklasyfikowany": null
+                    }
+                },
+                "strumien_2_dostep_do_wiedzy": {
+                    "opis": "Prawo do danych o Avatarze. Warstwowa widoczność modułów i danych wg klasyfikacji obserwatora.",
+                    "model_konfiguracji": {
+                        "tryb": "domyślne + nadpisanie ręczne",
+                        "zasada": "Każdej klasyfikacji obserwatora przypisany jest zakres widocznych modułów/danych."
+                    },
+                    "widocznosc_domyslna": {
+                        "niesklasyfikowany": "tylko dane podstawowe lub moduły jawnie otwarte przez suwerena",
+                        "uczeń": "zakres konfigurowany",
+                        "adept": "zakres konfigurowany",
+                        "mistrz": "zakres konfigurowany"
+                    }
+                },
+                "bramka_wstepna": {
+                    "opis": "Warunek wstępny dostępu dla osoby niezalogowanej oglądającej Profil Suwerena. Akt prawno-ontologiczny, nie zgoda na przetwarzanie.",
+                    "elementy_zatwierdzenia": [
+                        "Uznanie statusu: potwierdzenie, że jest to Profil Suwerena i traktowanie go jako suwerena.",
+                        "Klauzula nieużycia: informacje pozyskane z Profilu Suwerena przez osobę nieuprawnioną nie mogą być wykorzystane przeciwko suwerenowi w żadnej z akceptowanych symulacji (Moduł 2)."
+                    ],
+                    "efekt": "Zatwierdzenie odblokowuje kolejny poziom uprawnień. Generuje zobowiązanie obserwatora wpisywane do rejestru dostępu.",
+                    "cel": "Szczelność informacyjna — związanie czytającego przed udostępnieniem danych. Filtr wolnej woli.",
+                    "powiazanie_modul": 2
+                },
+                "rozszerzalnosc": "Każdy nowy moduł PS wymagający kontroli dostępu rejestruje tu swoje reguły wg tego samego wzorca (per oś, 4 stany, 2 strumienie)."
+            }
+        ]
+    }
+}

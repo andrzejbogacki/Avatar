@@ -1,0 +1,216 @@
+# ADR-011: Strażnik GPS
+
+**Status:** przyjęty
+**Data:** 08.09.2026
+**Panele źródłowe:** 11, 12, 13, 14, 15
+**Zastępuje:** wcześniejszą wersję ADR-011 wytworzoną w Panelu 13, która nigdy nie
+dotarła do repozytorium. Numer 011 zachowany — Strażnik GPS był i pozostaje jego
+tematem. Katalog ADR w repozytorium kończy się na ADR-009; numery 010 i 011
+oczekują na wgranie.
+
+---
+
+## 1. Kontekst
+
+Strażnik GPS rozstrzyga jedną rzecz: czy Awatar jest obecny ciałem w granicach
+planszy fizycznej. Nie ustala, gdzie dokładnie stoi. Precyzja jest ograniczona
+świadomie.
+
+Moduł blokuje integrację modułu bayo i stoi na pierwszej pozycji w kolejności
+rozwoju.
+
+Rozstrzygnięcie musiało pogodzić dwa wymagania stojące naprzeciw siebie:
+współrzędne Awatara nie mogą opuszczać jego urządzenia, a jednocześnie werdykt
+o obecności musi być wiarygodny dla pozostałych uczestników.
+
+---
+
+## 2. Decyzje
+
+### 2.1 Werdykt powstaje na urządzeniu
+
+Telefon pobiera kształt planszy i sam liczy przynależność. Współrzędne nie
+opuszczają urządzenia w żadnej postaci. Na zewnątrz idzie wyłącznie stan:
+wewnątrz albo na zewnątrz.
+
+Węzeł dystrybuuje kształt. Węzeł nie jest sędzią.
+
+### 2.2 Telefon zgłasza zmiany stanu
+
+Brak cyklicznego odpytywania. Meldunek powstaje w chwili przekroczenia granicy,
+nie w regularnym takcie.
+
+### 2.3 Geometria kształtu — dwa typy kanoniczne
+
+| Typ | Zapis | Test przynależności |
+|---|---|---|
+| okrąg | punkt środkowy, promień | odległość mniejsza od promienia |
+| wielokąt | lista wierzchołków | test przecięć promienia |
+
+Trzeciego typu nie ma. Obrys z mapy realnej jest **sposobem narysowania
+wielokąta**, nie odrębnym bytem — narzędzie mapowe pracuje wyłącznie
+w piaskownicy, a po zamrożeniu w kształcie zostaje sam wielokąt.
+
+Zależność zewnętrzna od dostawcy map nie wchodzi do warstwy rozstrzygającej
+obecność.
+
+**Parametr organizatora:** próg optymalizacji wierzchołków przy zamrożeniu.
+Granica administracyjna pobrana z mapy potrafi nieść setki wierzchołków, a
+podpisana treść wchodzi w budżet pakietu sieci kratowej.
+
+**Granica należy do zewnętrza — oba typy.** Punkt leżący dokładnie na krawędzi
+wielokąta albo w jego wierzchołku jest na zewnątrz, tak samo jak punkt
+w odległości równej promieniowi okręgu. Odległość mniejsza od promienia, nie
+mniejsza-równa. To kanon, nie wniosek z analogii — implementacja nie wyprowadza
+tej reguły samodzielnie, bierze ją stąd.
+
+**Zakres kształtu.** Plansza nie może przecinać południka 180° ani obejmować
+bieguna. Kształt o rozpiętości długości geograficznej powyżej 180° jest
+odrzucany jawnym błędem przy zamrożeniu. Odmowa jest jawna, nigdy cicha
+naprawa kształtu.
+
+**Odległość liczy się po kuli.** Promień średni R1 wyliczany z elipsoidy WGS84
+wzorem IUGG — (2a + b) / 3, gdzie a to półoś wielka, b półoś mała. Model kulisty
+jest kanonem Strażnika, nie wyborem implementacji: żadna liczba promienia nie
+jest wpisana, obie stałe elipsoidy stoją w konfiguracji modułu.
+
+### 2.4 Bufor planszy jest osobnym polem
+
+Jedna plansza może mieć wiele progów bez mnożenia kształtów. Bufor nie wchodzi
+pod podpis kształtu. Tolerancja błędu pomiaru to osobne pole — nie ten sam byt
+co bufor.
+
+### 2.5 Źródło dowodu obecności — trzy wartości
+
+`terminal`, `nadajnik`, `brak`. Pole obowiązkowe przy każdym meldunku obecności
+ciałem.
+
+### 2.6 Kształt jest niezmienny po wyjściu z piaskownicy
+
+Zmiana kształtu oznacza nową planszę, nie nową wersję istniejącej. Kształt
+podpisany kluczem Awatara właściciela planszy. Plansza dziedziczy tożsamość
+właściciela — nie ma własnej.
+
+### 2.7 Przekroczenie granicy gasi obecność ciałem natychmiast
+
+Gaśnie obecność fizyczna (pozycja 6). Więź z grą (pozycja 3) zostaje. Awatar
+poza granicą uczestniczy duchem i zachowuje uprawnienia wynikające z udziału,
+traci wyłącznie te wynikające z ciała. Powiadomienie idzie do Awatara i do
+organizatora.
+
+### 2.8 Cisza sprzętu nie dowodzi nieobecności
+
+Utrata sygnału i rozładowany telefon uruchamiają bezpiecznik czasowy — 2 godziny
+do wylogowania. To inny mechanizm niż przekroczenie granicy.
+
+### 2.9 Zsunięcie o poziom przysługuje warunkowo
+
+Po ucichnięciu telefonu obecność schodzi na meldunek o czasie ważności
+**wyłącznie wtedy, gdy przed ciszą istniał drugi dowód** — terminal albo
+nadajnik certyfikowany. Bez drugiego dowodu obecność gaśnie z upływem
+bezpiecznika.
+
+Powód: meldunek o czasie ważności nigdy nie był kanałem samodzielnym. Brak
+sygnału nie może dawać więcej niż sygnał.
+
+**Parametr organizatora:** długość okna zsuniętego meldunku.
+
+### 2.10 Opaska daje obecność ciałem, nie daje podpisu
+
+Opaska jest nośnikiem identyfikatora odczytywanego przez sprzęt certyfikowany.
+Pole źródła dowodu zapisuje wtedy `terminal` albo `nadajnik` — nigdy „opaska”.
+
+Opaska nie niesie klucza w żadnej postaci. Podpis wymaga urządzenia z ekranem
+i wprowadzaniem hasła. Uczestnik z samą opaską jest obecny i widoczny, lecz nie
+głosuje, nie przystępuje i nie wykonuje ruchów wymagających podpisu.
+
+**Parametr organizatora:** czy gra wymaga telefonu. Deklarowany przy zakładaniu
+gry, widoczny przed przystąpieniem.
+
+### 2.11 Ważność podpisu kształtu zależy od powodu zdjęcia klucza
+
+`wycofanie` — sprzęt wymieniony, podpisy zostają ważne. `unieważnienie` — sprzęt
+w cudzych rękach, podpisy tracą ważność od chwili zgłoszenia. Zdjęcie klucza
+autoryzuje hasło konta. Rozstrzygnięcia szczegółowe: ADR-012.
+
+---
+
+## 3. Alternatywy odrzucone
+
+| Odrzucone | Powód |
+|---|---|
+| werdykt po stronie węzła | współrzędne musiałyby opuścić urządzenie |
+| cykliczne odpytywanie pozycji | zużycie energii i strumień danych bez wartości dowodowej |
+| jeden typ geometrii (wszystko wielokątem) | okrąg opisany dwiema liczbami puchnie do kilkudziesięciu par współrzędnych; stały błąd aproksymacji na granicy |
+| trzy typy geometrii (obrys jako osobny byt) | trzy ścieżki kodu, trzy testy, trzy walidacje do rozjechania się |
+| bufor wewnątrz kształtu | mnożyłby kształty tam, gdzie zmienia się wyłącznie próg |
+| bezwarunkowe zsunięcie po ucichnięciu telefonu | wyłączenie telefonu tuż przed granicą zachowywałoby obecność, której nikt nie sprawdza |
+| bezwarunkowe wygaszenie po ucichnięciu telefonu | awaria sprzętu traktowana jak opuszczenie planszy |
+| opaska z własnym kluczem podpisu | sprzęt bez ekranu nie ma czym autoryzować; zabrana opaska daje napastnikowi ważne podpisy |
+| opaska wyłącznie przedłużająca obecność zaczepioną | powiela regułę zsunięcia warunkowego, nie wnosi nowej |
+| zegar urządzenia jako chwila rozstrzygająca | antydatowanie przez posiadacza przejętego sprzętu |
+| plansza przecinająca południk 180° albo obejmująca biegun | drugi test geometryczny dla kształtu spoza zasięgu gry; cichy zły werdykt na granicy kosztuje więcej niż jawna odmowa zamrożenia |
+
+---
+
+## 4. Konsekwencje
+
+**Przyjęte świadomie:**
+
+- Uczestnik z jednym dowodem, faktycznie obecny, traci obecność ciałem po
+  rozładowaniu telefonu.
+- Uczestnik z samą opaską jest obecny i bezgłosy. Gry oparte na częstych
+  decyzjach są dla niego niegrywalne — organizator ma to nazwać jawnie
+  w opisie gry, nie ukryć w kodzie.
+- Po zamrożeniu nie da się odtworzyć, że kształt pochodził z obrysu miasta.
+  Aktualizacja granic administracyjnych oznacza nową planszę.
+- Odległość po kuli niesie błąd względny do 0,5% wobec elipsoidy WGS84 — przy
+  promieniu planszy 1 000 m to do 5 m. Przyjęty świadomie: jest mniejszy od
+  zgrubności celowej Strażnika (punkt 1) i mieści się w błędzie odbiornika.
+  Precyzja pozycji nie jest tu przedmiotem rozstrzygnięcia.
+- Organizator nie założy planszy na przecięciu południka 180° ani wokół
+  bieguna. Taki kształt nie ma obejścia — ma odmowę.
+
+**Wymagane do zbudowania:**
+
+- dwa testy geometryczne po stronie urządzenia,
+- próg optymalizacji wierzchołków po stronie piaskownicy,
+- trzy nowe parametry organizatora w konfiguracji planszy i gry.
+
+---
+
+## 5. Punkty otwarte
+
+| Nr | Sprawa | Stan |
+|---|---|---|
+| **O1** | **[BRAK DANYCH]** — treść do odtworzenia z Ziarna Transferu v13 | otwarty |
+| O2 | ważność podpisu wobec rotacji klucza | ZAMKNIĘTY, Panel 14 |
+| O3 | autoryzacja zdjęcia klucza | ZAMKNIĘTY, Panel 14 |
+| O4 | przydatność kluczy Awatara do podpisywania kształtów | ZAMKNIĘTY warunkowo, Panel 14 — klucze jeszcze nie istnieją |
+| O5 | reprezentacja geometrii w kodzie | ZAMKNIĘTY, Panel 15 — punkt 2.3 |
+| **O6** | **[BRAK DANYCH]** — treść do odtworzenia z Ziarna Transferu v13 | otwarty |
+| O7 | padnięcie telefonu | ZAMKNIĘTY, Panel 15 — punkt 2.9 |
+| O8 | opaska bez telefonu | ZAMKNIĘTY, Panel 15 — punkt 2.10 |
+| **O9** | **[BRAK DANYCH]** — treść do odtworzenia z Ziarna Transferu v13 | otwarty |
+
+Poza numeracją, do rozstrzygnięcia osobno:
+
+- co uruchamia tryb czujności Bluetooth — automat, człowiek czy parametr Awatara,
+- nadajnik niosący numer wersji kształtu — do przemyślenia po zamrożeniu kształtu,
+- siedem pojęć Strażnika GPS do glosariusza — własny wątek.
+
+---
+
+## 6. Zasady utrwalone przez ten ADR
+
+- Weryfikuje się człowieka, nie jego sprzęt.
+- Węzeł dystrybuuje, nie sądzi.
+- Awatar liczy sam, ale nie na własnych danych opuszczających urządzenie.
+- Trwałe osobno, zmienne osobno.
+- Brak sygnału nie daje więcej niż sygnał.
+- Zakaz konfabulacji: nieznany parametr = stop, decyzja do Suwerena.
+
+---
+
+**Miejsce docelowe:** `pakiet_startowy_claude_code/docs/adr/ADR-011-straznik-gps.md`
+**Wgrywanie:** zablokowane do czasu decyzji z Ziarna Transferu v14-REPO.
