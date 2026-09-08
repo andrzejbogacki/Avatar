@@ -41,7 +41,7 @@ i skutki, potem następna decyzja. Duże tematy dzielisz na krótkie moduły, ni
   Stara historia (94 commity) leży wyłącznie lokalnie na gałęzi `stare-main`;
   nie ma zdalnego, z którego dałoby się ją odtworzyć.
 - Temat ma trzy stany: omówiony, spisany, wgrany i potwierdzony odczytem zdalnym. Zamknięty jest dopiero trzeci.
-- Sesja kończy się wypchnięciem tego, co powstało. Nie kolejką plików do wgrania później.
+- Sesja pracy kończy się wypchnięciem tego, co powstało. Nie kolejką plików do wgrania później.
 - Pusty commit to fikcja — nie robisz.
 - Rekomendacja wypchnięcia gałęzi, której nazwa ostrzega (backup, przed-, tmp), nie istnieje.
 - Podział ról plików CLAUDE.md: ten plik rządzi komunikacją i cyklem pracy; pakiet_startowy_claude_code/CLAUDE.md rządzi stosem, kodem i Definition of Done. Przy pozornej sprzeczności obowiązują oba w swoich zakresach.
@@ -50,15 +50,16 @@ i skutki, potem następna decyzja. Duże tematy dzielisz na krótkie moduły, ni
 
 - ADR: pakiet_startowy_claude_code/docs/adr/ według szablonu ADR-000. Numer nadajesz przy spisaniu, po sprawdzeniu katalogu i git ls-files.
   Zarezerwowane: ADR-010 Rezonator Kwantowy (niespisany). Dziura w numeracji nie jest błędem.
-- Ziarna transferu: docs/ziarna/. Czytasz je sam na starcie sesji programowej — Andrzej ich nie wkleja.
+- Ziarna transferu: docs/ziarna/. Czytasz je sam na starcie sesji pracy — Andrzej ich nie wkleja.
 - Glosariusz: pojęcia własne projektu przez „nazwa", nie kod. Identyfikatory w kodzie: polskie, bez ogonków.
 - Kanon a parametr: mechanizm to kanon, nastawa to parametr organizatora. Parametr nie ma wartości domyślnej.
 - Hierarchia źródeł: glosariusz definiuje pojęcia, ADR rozstrzyga mechanikę — gdy oba mówią co innego o mechanice, obowiązuje ADR, a rozbieżność zgłaszasz jako punkt otwarty, nie poprawiasz po cichu w glosariuszu.
-- Gołe słowo „sesja" jest zakazane. Piszesz pełną nazwą: „sesja gry", „sesja logowania", „ważność meldunku".
+- Gołe słowo „sesja" jest zakazane. Cztery dozwolone nazwy: „sesja gry", „sesja logowania", „ważność meldunku", „sesja pracy" (praca z Claude Code).
+  Zakres: dokumenty, ADR-y, glosariusz, Ziarna. Nie obejmuje identyfikatorów w kodzie — te zmieniasz wyłącznie przy okazji pracy nad danym modułem, nigdy hurtem.
 
-## 6. Rejestr komunikacji — obowiązek na zamknięcie sesji
+## 6. Rejestr komunikacji — obowiązek na zamknięcie sesji pracy
 
-Plik: docs/komunikacja/rejestr.md. Przy każdym zamknięciu sesji dopisujesz wiersz do dziennika
+Plik: docs/komunikacja/rejestr.md. Przy każdym zamknięciu sesji pracy dopisujesz wiersz do dziennika
 za każde tarcie i aktualizujesz tablicę. Kategorie zamknięte na sześć liter:
 R — brak rekomendacji · E — etykieta dwuznaczna · O — domysł zamiast odczytu ·
 D — zła długość modułu · G — wyciek grzeczności · Z — żargon, zdanie niezrozumiałe.
@@ -68,7 +69,7 @@ Trafienie = decyzja przyjęta jednym słowem za pierwszym razem. Nowej litery ni
 
 Wątek zaczynający się od „ZIARNO TRANSFERU" albo „ROZWÓJ INTELIGENCJI" to tryb Meta:
 blokujesz zadania operacyjne, pracujesz wyłącznie nad transferem i porządkiem wiedzy.
-Start sesji programowej = trzy zdania stanu z ostatniego Ziarna, potem pierwsza decyzja.
+Start sesji pracy = trzy zdania stanu z ostatniego Ziarna, potem pierwsza decyzja.
 
 ## 8. Zasady projektu w mocy
 

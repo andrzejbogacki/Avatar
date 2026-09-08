@@ -4,7 +4,7 @@
 - **Decydent:** Suweren (Andrzej Bogacki)
 
 ## Kontekst
-Moduł 0 (Auth) wymaga wyboru technologii tożsamości i sesji oraz formatu
+Moduł 0 (Auth) wymaga wyboru technologii tożsamości i sesji logowania oraz formatu
 przechowywania kont. Rejestracja wyłącznie przez zaproszenie z dwufazowym
 zatwierdzaniem przez Suwerena — mechanizm nieobsługiwany przez gotowe
 produkty bez rozszerzeń customowych.
@@ -12,8 +12,8 @@ produkty bez rozszerzeń customowych.
 ## Decyzja
 1. Auth jako własny moduł Node.js w `backend/modules/auth/` — bez
    zewnętrznego dostawcy tożsamości i bez Keycloak. Hasła: `node:crypto`
-   scrypt z solą (zero nowych zależności). Sesja: cookie `httpOnly`
-   + rejestr sesji po stronie serwera.
+   scrypt z solą (zero nowych zależności). Sesja logowania: cookie `httpOnly`
+   + rejestr sesji logowania po stronie serwera.
 2. Konta przechowywane jako JSON per konto:
    `backend/modules/auth/accounts/<avatar_id>.json` — wzorzec spójny
    z QAC (`profiles/<avatar_id>.json`) i PS (jeden JSON per Avatar).
@@ -35,7 +35,7 @@ produkty bez rozszerzeń customowych.
 - Pozytywne: pełna suwerenność danych tożsamości; jednolity stos JS;
   prosta ścieżka migracji do szyfrowanej bazy węzła 9 (ADR-001).
 - Koszty: własna odpowiedzialność za poprawność krypto (ograniczona
-  użyciem wyłącznie prymitywów `node:crypto`); sesje w pamięci —
+  użyciem wyłącznie prymitywów `node:crypto`); sesje logowania w pamięci —
   restart serwera wymusza ponowne logowanie (konsekwencja jawna,
   zaakceptowana).
 - Wpływ: PS, Wymiennik i Rezonator czytają tożsamość z Auth przez

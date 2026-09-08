@@ -11,11 +11,11 @@ Podpis kształtu planszy (ADR-011 2.6) i ważność podpisu wobec zdjęcia klucz
 Odczyt repozytorium z 08.09.2026: w `backend/` nie występuje ani jedno
 wywołanie `generateKeyPair`, `createSign` ani `createVerify`. Moduł Auth zna
 wyłącznie hasło przepuszczone przez scrypt, sól, jednorazowy token aktywacji
-i rejestr sesji; unieważnienie sesji to usunięcie wpisu.
+i rejestr sesji logowania; unieważnienie sesji logowania to usunięcie wpisu.
 
 ## Decyzja
-1. **Rozszerz moduł Auth o tożsamość kryptograficzną.** Hasło zostaje przy
-   logowaniu do sesji, klucz służy do podpisu. Dwie role, bez splątania.
+1. **Rozszerz moduł Auth o tożsamość kryptograficzną.** Hasło otwiera
+   sesję logowania, klucz służy do podpisu. Dwie role, bez splątania.
    Osobny ADR, nie dopisek do ADR-002.
 2. **Używaj Ed25519.** Klucz publiczny 32 B, podpis 64 B, stała długość,
    podpis deterministyczny. Dostępny w `node:crypto` bez zewnętrznej

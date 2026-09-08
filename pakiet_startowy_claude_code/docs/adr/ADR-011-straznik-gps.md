@@ -260,6 +260,7 @@ Obowiązuje punkt 2.8.
 | **O10** | dowód uzyskany **w trakcie** ciszy — odbicie przy terminalu przy padniętym telefonie. Ziarno v12 punkt 1.11 mówi, że przywraca mocniejszy poziom; punkt 2.9 rozstrzyga wyłącznie dowód sprzed ciszy. Mechanizm przywracania nierozstrzygnięty i niezbudowany | otwarty |
 | **O11** | ważność Ostatniego dowodu Awatara — czy dotknięcie terminala sprzed trzech dni nadal jest drugim dowodem. Dziś moduł nie ogranicza wieku dowodu, bo ograniczenia nie ma skąd wziąć | otwarty |
 | O12 | próg czasowy — czy upływ równy progowi już wywołuje skutek | ZAMKNIĘTY 08.09.2026 — tak, punkt 2.8. Interpretacja logiczna zastąpiona kanonem, zachowanie kodu bez zmian |
+| **O13** | czas ważności meldunku uczestnika bez telefonu — szósty parametr organizatora, niezdefiniowany. Nie jest tym samym co okno zsuniętego meldunku z punktu 2.9: tamto dotyczy Awatara, którego telefon ucichł, i wymaga drugiego dowodu sprzed ciszy; ten dotyczy uczestnika, który telefonu nie ma wcale (punkt 2.10). Glosariusz wymienia go w haśle Parametr organizatora, ADR-011 nie nadaje mu długości, a lista pięciu parametrów w Ziarnie v16 sekcja 5 go nie zna | otwarty |
 
 Poza numeracją, do rozstrzygnięcia osobno:
 
