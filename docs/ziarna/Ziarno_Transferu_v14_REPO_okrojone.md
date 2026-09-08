@@ -174,7 +174,8 @@ osobowe. Nieprzeszukane.
 druga przez Tailscale SSH — obie wskazały ten sam katalog.
 
 Jedyny klon repozytorium na całym systemie: **`/Users/andrzej/Public/Avatar`**.
-Zdalny: `git@github.com:andrzejbogacki/Avatar-Projekt.git`.
+Zdalny: `git@github.com:andrzejbogacki/Avatar.git` (adres z 08.09.2026;
+w Panelu 14 było `Avatar-Projekt.git`, dziś pod zdalnym `stare`).
 
 ### 4.2 Podział ról — ustalony jawnie
 
@@ -185,14 +186,14 @@ skąd Suweren je pobiera; commituje Claude Code.
 Wzorzec odczytu dla Nexusa — pełna historia:
 
 ```bash
-cd /tmp && git clone -q https://github.com/andrzejbogacki/Avatar-Projekt.git klon
+cd /tmp && git clone -q https://github.com/andrzejbogacki/Avatar.git klon
 ```
 
 Wzorzec odczytu bez historii (szybszy):
 
 ```bash
 curl -sS -L -o /tmp/avatar.tar.gz \
-  "https://codeload.github.com/andrzejbogacki/Avatar-Projekt/tar.gz/refs/heads/main"
+  "https://codeload.github.com/andrzejbogacki/Avatar/tar.gz/refs/heads/main"
 ```
 
 **Oba przestaną działać, jeśli repozytorium stanie się prywatne.** Wtedy

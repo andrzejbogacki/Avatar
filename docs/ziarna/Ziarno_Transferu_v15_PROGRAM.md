@@ -19,8 +19,9 @@ Claude Code czyta je sam.**
 ## 1. STAN REPOZYTORIUM — ODCZYTANY, NIE DOMYŚLONY
 
 Katalog roboczy: `/Users/andrzej/Public/Avatar`, gałąź `main`, origin przez SSH
-(`git@github.com:andrzejbogacki/Avatar-Projekt.git`). Repozytorium prywatne,
-forków zero.
+(`git@github.com:andrzejbogacki/Avatar.git`). Repozytorium prywatne,
+forków zero. Adres zmieniony 08.09.2026 przy przeniesieniu do nowego
+repozytorium — poprzedni `Avatar-Projekt.git` stoi pod zdalnym `stare`.
 
 **Topologia pracy.** Suweren pisze do Nexusa z MacBooka. Sesja Claude Code chodzi
 na Mac Mini (`Mac-mini-Andrzej`, M4, macOS 26.3). To dwa dyski. Plik pobrany na
@@ -177,6 +178,19 @@ gałęzi `main` jest czysty.
 
 **Cena:** historia commitów znika. Decyzje niosą ADR-y i Ziarna, nie historia.
 **Zysk:** Nexus odzyskuje odczyt repozytorium; wklejanie w stronę Meta znika.
+
+**WYKONANE 08.09.2026.** Cztery kroki przeszły w tej kolejności. Krok pierwszy:
+audyt całego drzewa dwiema metodami — zero danych osób trzecich; fixture'y QAC
+odwiązane od identyfikatora Suwerena, wzmianka o osobach zależnych usunięta.
+Krok drugi: Suweren założył `git@github.com:andrzejbogacki/Avatar.git`, puste,
+zero referencji potwierdzone odczytem. Krok trzeci: gałąź bez historii, jeden
+commit **`1e6e364`** „Projekt Avatar — stan na 08.09.2026, Panel 15", 221 plików;
+drzewo zdalne zgodne z lokalnym co do hasza drzewa głównego (`81c96ac`).
+Krok czwarty — kasowanie starego repozytorium — należy do Suwerena i czeka.
+
+**Stara historia nie zginęła.** 74 commity leżą lokalnie na gałęzi
+`stare-main` (`747c07f`), śledzącej zdalny `stare`. Katalog `.git` nie był
+kasowany — przeniesienie zrobiono gałęzią bez historii, nie od nowa.
 
 ---
 
