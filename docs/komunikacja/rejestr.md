@@ -13,6 +13,7 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 14 | 27.08.2026 | Opus 5 | 1 | 2 | 2 | 0 | 0 | 0 | 5 | — |
 | 15 | 08.09.2026 | Opus 5 | 1 | 1 | 5 | 1 | 0 | 0 | 8 | 20 |
 | 15 | 08.09.2026 | Fable 5.1 | 0 | 0 | 2 | 0 | 0 | 0 | 2 | 2 |
+| 16 | 09.09.2026 | Opus 5 | 0 | 3 | 0 | 0 | 0 | 0 | 3 | 3 |
 
 ## Dziennik
 
@@ -34,3 +35,8 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 08.09.2026 | 15 | Opus 5 | O | w uzasadnieniu rekomendacji: „trzy z czterech źródeł prawdy wróciły do repozytorium"; z odczytu wynikały dwa wiersze na cztery, dwa nadal wskazują pliki nieistniejące | liczby w uzasadnieniu też z odczytu, nie z rozpędu |
 | 08.09.2026 | 15 | Opus 5 | O | mapa projektu zapisana przez parser JSON: przeformatowany cały plik zamiast jednej wartości, 191 linii różnicy zamiast jednej | zmiana punktowa w tekście; przed zapisem sprawdzić, co narzędzie zrobi z resztą pliku |
 | 08.09.2026 | 15 | Opus 5 | D | różnica przed i po utonęła w długim raporcie; Suweren musiał poprosić o nią drugi raz, osobno | to, o co poproszono, idzie samo i pierwsze; reszta raportu po nim albo wcale |
+| 09.09.2026 | 16 | Opus 5 | E | „bezpiecznik czasowy" nazywał dwie wielkości o przeciwnym statusie: kanon dwóch godzin z punktu 2.8 i parametr organizatora z punktu 2.9 | jedna nazwa na jedną wielkość; nazwa pasująca do obu nie rozstrzyga, która jest nastawiana |
+| 09.09.2026 | 16 | Opus 5 | E | gołe słowo „sesja" w pięciu znaczeniach naraz: gra, logowanie, ważność meldunku, praca z Claude Code, emisja Rezonatora | pięć pełnych nazw, gołe słowo zakazane |
+| 09.09.2026 | 16 | Opus 5 | E | „sesja programowa" poprawiona w CLAUDE.md na „sesja pracy", podczas gdy nazwy plików Ziaren niosą dalej PROGRAM | nazwa pliku jest identyfikatorem zamkniętego zapisu, nie tekstem dokumentu — reguła nazewnicza jej nie obejmuje |
+| 09.09.2026 | 16 | Opus 5 | — | trzy zatrzymania Code przed dopisaniem czegoś, czego kanon nie daje: czas ważności meldunku bez telefonu, piąte znaczenie słowa sesja, brak liczby dla wieku Ostatniego dowodu Awatara. Wszystkie trzy słuszne | trafienia, nie tarcia — zatrzymanie przed konfabulacją jest wykonaniem reguły |
+| 09.09.2026 | 16 | Opus 5 | E | **wzorzec:** litera E po raz trzeci w trzech kolejnych panelach — 14, 15, 16. To nie jest pojedyncze wystąpienie, tylko stała słabość nazewnicza | nazwę sprawdza się na dwuznaczność przed zapisem do kanonu, nie po zgłoszeniu przez Suwerena |
