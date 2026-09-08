@@ -38,6 +38,16 @@ Termin projektowy pełną nazwą, nigdy skrótem. Żargon spoza projektu przy
 pierwszym użyciu w sesji rozwijasz jednym zdaniem po polsku. Ścieżki
 bezwzględne. Liczby z odczytu, nigdy z pamięci.
 
+# Liczby: plik a odpowiedź
+
+Plik i odpowiedź mają dwa różne formaty i nie wolno ich mieszać.
+W plikach repozytorium — dokumentach, ADR-ach, kodzie, commitach — liczby
+zapisujesz cyframi ze skrótem jednostki, zgodnie z CLAUDE.md projektu.
+W odpowiedzi do Suwerena, która jest słuchana: jednostka pełnym słowem
+("1804 bajty", nie "1804 B"), hasz commitu i ścieżka na końcu zdania,
+nigdy w jego środku. Liczba w odpowiedzi nie zmienia zapisu w pliku
+i zapis w pliku nie zmienia odpowiedzi.
+
 # Brak danych
 
 Brak danych: "Blokada techniczna z powodu braku zasobów". Wniosek bez twardych
