@@ -46,7 +46,7 @@ test('bezpiecznik bez drugiego dowodu gasi obecność — źródło „brak" nie
     assert.equal(wynik.meldunek.stan, 'duch');
 });
 
-test('bezpiecznik to 2 godziny z kanonu, nie liczba wpisana w kod (ADR-011 2.8)', () => {
+test('bezpiecznik to 2 godziny z kanonu, a próg osiągnięty już gasi (ADR-011 2.8)', () => {
     assert.equal(CZAS.BEZPIECZNIK_CISZY_MS, 2 * GODZINA_MS);
 
     const tuz_przed = wykryjSkutekCiszy('obecny', DOWOD_BRAK, chwile(CZAS.BEZPIECZNIK_CISZY_MS - 1), NASTAWY);
@@ -100,6 +100,7 @@ test('zsunięty w oknie: bez zmian, żadnego meldunku', () => {
     assert.equal(wynik.meldunek, null);
 });
 
+// Chwila równa końcowi okna już wygasza — ta sama reguła progu co w 2.8.
 test('upływ okna gasi zsuniętą obecność — meldunek o czasie ważności wygasa', () => {
     const uplyw = CZAS.BEZPIECZNIK_CISZY_MS + OKNO_MS;
     const wynik = wykryjSkutekCiszy('zsuniety', DOWOD_TERMINAL, chwile(uplyw), NASTAWY);

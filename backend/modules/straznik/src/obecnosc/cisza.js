@@ -103,6 +103,11 @@ function wykryjSkutekCiszy(stan_poprzedni, ostatni_dowod, chwile, nastawy) {
 
     // Cisza krótsza od bezpiecznika znaczy „bez zmian" i niczym się nie różni
     // od ciszy telefonu, który po prostu nie ma nic do powiedzenia.
+    //
+    // Osiągnięcie progu wywołuje skutek — upływ równy dwóm godzinom już gasi
+    // (ADR-011 2.8). Kanon, nie wniosek z analogii: przy granicy planszy (2.3)
+    // równość zostawia punkt na zewnątrz, bo tam rozstrzyga się przynależność
+    // do figury. Tu upływa termin i reguła brzegowa jest odwrotna.
     if (czas_ciszy_ms < CZAS.BEZPIECZNIK_CISZY_MS) {
         return { stan: stan_poprzedni, meldunek: null };
     }
@@ -116,6 +121,7 @@ function wykryjSkutekCiszy(stan_poprzedni, ostatni_dowod, chwile, nastawy) {
 
     // Okno liczy się od początku ciszy, nie od chwili sprawdzenia. Inaczej
     // późniejsze zapytanie przedłużałoby obecność, której nikt nie potwierdza.
+    // Chwila równa końcowi okna już wygasza zsunięcie — ten sam próg co wyżej.
     if (!czyByłDrugiDowod(ostatni_dowod, chwile.chwila_ostatniego_meldunku_ms)
         || chwile.chwila_biezaca_ms >= koniec_okna_ms) {
         return wynik(stan_poprzedni, DUCH, nastawy);

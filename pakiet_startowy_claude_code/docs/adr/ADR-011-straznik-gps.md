@@ -107,6 +107,16 @@ Rozróżnienie, z którego bierze się cały punkt: system nie dowiaduje się, �
 Awatar wyszedł. Dowiaduje się, że przestał potwierdzać. Wyjście ma werdykt
 i gasi natychmiast (2.7); cisza werdyktu nie ma i dlatego dostaje bezpiecznik.
 
+**Osiągnięcie progu wywołuje skutek.** Upływ ciszy **równy** dwóm godzinom już
+gasi obecność; upływ równy końcowi okna już wygasza zsunięcie. „2 godziny do
+wylogowania" to termin, który upływa, nie granica, po której trzeba jeszcze coś
+dołożyć. To kanon, nie wniosek z analogii — implementacja bierze regułę stąd.
+
+Konwencja jest tu odwrotna niż przy granicy planszy (2.3), gdzie równość
+zostawia punkt na zewnątrz. Różnica jest rzeczowa: tam rozstrzyga się
+przynależność do figury, tu upływ terminu. Dwie reguły brzegowe w jednym
+module, każda uzasadniona osobno.
+
 **Dwie godziny są kanonem, nie parametrem organizatora.** Wartość dotyczy
 wiarygodności dowodu, nie kształtu gry — organizator nie dostaje jej do
 nastawiania, bo skracając ją albo wydłużając zmieniałby to, ile znaczy cisza,
@@ -177,6 +187,7 @@ autoryzuje hasło konta. Rozstrzygnięcia szczegółowe: ADR-012.
 | pole planszy `zrodlo_dowodu` jako drugi dowód z punktu 2.9 | odpowiada na inne pytanie: czym plansza *dopuszcza* potwierdzać, nie czym ten Awatar potwierdził. Terminal na planszy dawałby zsunięcie każdemu, kto go nigdy nie dotknął |
 | okno zsuniętego meldunku liczone od chwili sprawdzenia | późniejsze zapytanie przedłużałoby obecność, której nikt nie potwierdza; okno biegnie od początku ciszy |
 | dwie godziny bezpiecznika jako parametr organizatora | nastawa zmieniałaby to, ile znaczy cisza — czyli siłę dowodu, nie kształt gry |
+| skutek dopiero po **przekroczeniu** progu czasowego | „2 godziny do wylogowania" znaczyłoby wtedy „nieco ponad 2 godziny"; zapis wymagałby dopowiedzenia, żeby tłumaczyć sam siebie |
 | plansza przecinająca południk 180° albo obejmująca biegun | drugi test geometryczny dla kształtu spoza zasięgu gry; cichy zły werdykt na granicy kosztuje więcej niż jawna odmowa zamrożenia |
 
 ---
@@ -227,7 +238,7 @@ autoryzuje hasło konta. Rozstrzygnięcia szczegółowe: ADR-012.
 | **O9** | **[BRAK DANYCH]** — treść do odtworzenia z Ziarna Transferu v13 | otwarty |
 | **O10** | dowód uzyskany **w trakcie** ciszy — odbicie przy terminalu przy padniętym telefonie. Ziarno v12 punkt 1.11 mówi, że przywraca mocniejszy poziom; punkt 2.9 rozstrzyga wyłącznie dowód sprzed ciszy. Mechanizm przywracania nierozstrzygnięty i niezbudowany | otwarty |
 | **O11** | ważność Ostatniego dowodu Awatara — czy dotknięcie terminala sprzed trzech dni nadal jest drugim dowodem. Dziś moduł nie ogranicza wieku dowodu, bo ograniczenia nie ma skąd wziąć | otwarty |
-| **O12** | próg czasowy: czy upływ **równy** dwóm godzinom już gasi, a upływ równy końcowi okna już wygasza zsunięcie. Kod przyjmuje „osiągnięcie progu wywołuje skutek" jako **interpretację logiczną z powodu braku danych** — do potwierdzenia albo odwrócenia przez Suwerena | otwarty |
+| O12 | próg czasowy — czy upływ równy progowi już wywołuje skutek | ZAMKNIĘTY 08.09.2026 — tak, punkt 2.8. Interpretacja logiczna zastąpiona kanonem, zachowanie kodu bez zmian |
 
 Poza numeracją, do rozstrzygnięcia osobno:
 
