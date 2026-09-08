@@ -100,8 +100,14 @@ organizatora.
 
 ### 2.8 Cisza sprzętu nie dowodzi nieobecności
 
-Utrata sygnału i rozładowany telefon uruchamiają bezpiecznik czasowy — 2 godziny
+Utrata sygnału i rozładowany telefon uruchamiają **bezpiecznik ciszy** — 2 godziny
 do wylogowania. To inny mechanizm niż przekroczenie granicy.
+
+**Dwie nazwy, dwie wielkości, żadnego wspólnego słowa.** Wielkość z tego punktu
+nazywa się wyłącznie „bezpiecznik ciszy" i jest kanonem. Wielkość z punktu 2.9
+nazywa się wyłącznie „okno zsuniętego meldunku" i jest parametrem organizatora.
+Nazwa „bezpiecznik czasowy" wychodzi z użycia: pasowała do obu, więc nie
+rozstrzygała, która z nich jest nastawiana, a która nie.
 
 Rozróżnienie, z którego bierze się cały punkt: system nie dowiaduje się, że
 Awatar wyszedł. Dowiaduje się, że przestał potwierdzać. Wyjście ma werdykt
@@ -167,6 +173,21 @@ gry, widoczny przed przystąpieniem.
 `wycofanie` — sprzęt wymieniony, podpisy zostają ważne. `unieważnienie` — sprzęt
 w cudzych rękach, podpisy tracą ważność od chwili zgłoszenia. Zdjęcie klucza
 autoryzuje hasło konta. Rozstrzygnięcia szczegółowe: ADR-012.
+
+### 2.12 Hierarchia źródeł — glosariusz definiuje, ADR rozstrzyga
+
+Glosariusz definiuje pojęcia, ADR rozstrzyga mechanikę. Gdy oba mówią co innego
+o mechanice, obowiązuje ADR.
+
+Rozbieżność zgłasza się jako punkt otwarty. Nie poprawia się jej po cichu
+w glosariuszu, bo cicha poprawka usuwa ślad po tym, że dwa dokumenty się
+rozjechały — a ślad jest tu treścią, nie zaniedbaniem. Kolejność jest
+rzeczowa, nie hierarchią godności: definicja nazywa byt, rozstrzygnięcie mówi,
+jak ten byt działa i czego mu wolno.
+
+Pierwszy przypadek objęty tą regułą: hasło Parametr organizatora oddawało
+organizatorowi długość bezpiecznika ciszy, którą punkt 2.8 zastrzegł dla kanonu.
+Obowiązuje punkt 2.8.
 
 ---
 

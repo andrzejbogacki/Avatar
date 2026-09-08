@@ -53,6 +53,8 @@ i skutki, potem następna decyzja. Duże tematy dzielisz na krótkie moduły, ni
 - Ziarna transferu: docs/ziarna/. Czytasz je sam na starcie sesji programowej — Andrzej ich nie wkleja.
 - Glosariusz: pojęcia własne projektu przez „nazwa", nie kod. Identyfikatory w kodzie: polskie, bez ogonków.
 - Kanon a parametr: mechanizm to kanon, nastawa to parametr organizatora. Parametr nie ma wartości domyślnej.
+- Hierarchia źródeł: glosariusz definiuje pojęcia, ADR rozstrzyga mechanikę — gdy oba mówią co innego o mechanice, obowiązuje ADR, a rozbieżność zgłaszasz jako punkt otwarty, nie poprawiasz po cichu w glosariuszu.
+- Gołe słowo „sesja" jest zakazane. Piszesz pełną nazwą: „sesja gry", „sesja logowania", „ważność meldunku".
 
 ## 6. Rejestr komunikacji — obowiązek na zamknięcie sesji
 
