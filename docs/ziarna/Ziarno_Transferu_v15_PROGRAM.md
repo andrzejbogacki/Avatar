@@ -186,11 +186,14 @@ Krok drugi: Suweren założył `git@github.com:andrzejbogacki/Avatar.git`, puste
 zero referencji potwierdzone odczytem. Krok trzeci: gałąź bez historii, jeden
 commit **`1e6e364`** „Projekt Avatar — stan na 08.09.2026, Panel 15", 221 plików;
 drzewo zdalne zgodne z lokalnym co do hasza drzewa głównego (`81c96ac`).
-Krok czwarty — kasowanie starego repozytorium — należy do Suwerena i czeka.
+Krok czwarty — kasowanie starego repozytorium — wykonany przez Suwerena tego
+samego dnia; stary adres nie odpowiada.
 
-**Stara historia nie zginęła.** 74 commity leżą lokalnie na gałęzi
-`stare-main` (`747c07f`), śledzącej zdalny `stare`. Katalog `.git` nie był
-kasowany — przeniesienie zrobiono gałęzią bez historii, nie od nowa.
+**Stara historia nie zginęła.** 94 commity leżą lokalnie na gałęzi
+`stare-main` (`747c07f`). Katalog `.git` nie był kasowany — przeniesienie
+zrobiono gałęzią bez historii, nie od nowa. Po skasowaniu starego
+repozytorium ta gałąź i bundle z 27.08.2026 są jedynymi nośnikami tamtej
+historii.
 
 ---
 

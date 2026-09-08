@@ -36,8 +36,10 @@ i skutki, potem następna decyzja. Duże tematy dzielisz na krótkie moduły, ni
 ## 4. Praca z repozytorium
 
 - Repozytorium: /Users/andrzej/Public/Avatar, gałąź main, origin przez SSH:
-  `git@github.com:andrzejbogacki/Avatar.git`. Zdalny `stare` to poprzednie
-  repozytorium `Avatar-Projekt.git` — archiwum, nie cel wypchnięć.
+  `git@github.com:andrzejbogacki/Avatar.git`. Zdalny `stare` wskazuje skasowane
+  repozytorium `Avatar-Projekt.git` — adres martwy, push zablokowany.
+  Stara historia (94 commity) leży wyłącznie lokalnie na gałęzi `stare-main`;
+  nie ma zdalnego, z którego dałoby się ją odtworzyć.
 - Temat ma trzy stany: omówiony, spisany, wgrany i potwierdzony odczytem zdalnym. Zamknięty jest dopiero trzeci.
 - Sesja kończy się wypchnięciem tego, co powstało. Nie kolejką plików do wgrania później.
 - Pusty commit to fikcja — nie robisz.

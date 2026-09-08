@@ -24,18 +24,26 @@ Cztery kroki z Ziarna v15 sekcja 7 wykonane. Stan z odczytu:
 | Rzecz | Wartość |
 |---|---|
 | `origin` | `git@github.com:andrzejbogacki/Avatar.git` |
-| `stare` | `git@github.com:andrzejbogacki/Avatar-Projekt.git` — archiwum, push zablokowany |
+| `stare` | `git@github.com:andrzejbogacki/Avatar-Projekt.git` — **adres martwy od 08.09.2026**, repozytorium skasowane przez Suwerena; wpis zostaje w konfiguracji, push zablokowany |
 | pierwszy commit nowego repozytorium | `1e6e364` „Projekt Avatar — stan na 08.09.2026, Panel 15" |
 | pliki w drzewie | 221 |
 | hasz drzewa głównego | `81c96ac` — identyczny po obu stronach, dowód kompletności |
-| stara historia | 74 commity, lokalnie na gałęzi `stare-main` (`747c07f`) |
+| stara historia | **94 commity**, wyłącznie lokalnie na gałęzi `stare-main` (`747c07f`), 221 plików w drzewie |
 
 Przeniesienie zrobiono gałęzią bez historii, nie kasowaniem `.git`. Katalog
 `.git` jest nietknięty, więc pełna stara historia stoi lokalnie i da się ją
 odtworzyć bez pobierania czegokolwiek.
 
-**Krok czwarty — skasowanie starego repozytorium — należy do Suwerena
-i czeka.** Do tego czasu skażona historia istnieje pod starym adresem.
+**Krok czwarty wykonany 08.09.2026: Suweren skasował stare repozytorium.**
+Odczyt potwierdza — `git ls-remote` na starym adresie zwraca „Repository not
+found", podczas gdy ten sam klucz odczytuje `origin` bez przeszkód. Skażona
+historia nie istnieje już publicznie. Procedura z Ziarna v15 sekcja 7 zamknięta
+w całości.
+
+**Stara historia żyje wyłącznie lokalnie** — gałąź `stare-main` i bundle
+z 27.08.2026 w dwóch miejscach. Skasowanie tej gałęzi albo katalogu `.git`
+oznacza utratę bezpowrotną: nie ma już zdalnego, z którego dałoby się ją
+pobrać.
 
 **Blokada techniczna wprowadzona 08.09.2026:** adres push zdalnego `stare`
 ustawiony na `no_push`. Odczyt działa, wypchnięcie odmawia. Zdjęcie blokady
@@ -136,7 +144,7 @@ CLAUDE.md, mapa, dokumenty. To podpis autora, nie wyciek.
 | Odległość od krawędzi wielokąta | liczona na płaszczyźnie lokalnej; przy planszach kilometrowych błąd rzędu metrów, przy kształtach o rozpiętości dziesiątek stopni rośnie |
 | ROADMAPA_BACKEND | nie zna słowa „Strażnik" ani ADR-012; kolejność modułów kończy się na Glosariuszu, a ADR-011 stawia Strażnika pierwszym |
 | Punkty O1, O6, O9 Strażnika | treść odzyskana z Ziarna v13 — przycinanie listy obecnych po stronie wywołującego, wartość skróconego okna jako zadanie testowe, telefon-świadek. Wszystkie trzy czekają za Protokołem Relacji albo za testem w terenie |
-| Kasowanie starego repozytorium | należy do Suwerena |
+| ~~Kasowanie starego repozytorium~~ | **ZAMKNIĘTY 08.09.2026** — wykonane przez Suwerena, potwierdzone odczytem |
 
 ---
 
