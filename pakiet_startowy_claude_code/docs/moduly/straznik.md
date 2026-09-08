@@ -3,35 +3,41 @@
 - **adres_rejestr:** modul.straznik — kandydat (`rejestr.json` nie istnieje w repozytorium)
 - **ścieżka:** backend/modules/straznik/
 - **status:** piaskownica
-- **wersja:** ADR-011 punkty 2.2, 2.3, 2.7; kod: geometria planszy i detektor przekroczenia granicy, 2026-09-08 (59 testów pass)
+- **wersja:** ADR-011 punkty 2.2, 2.3, 2.7, 2.8, 2.9; kod: geometria planszy, detektor przekroczenia granicy, bezpiecznik ciszy sprzętu i zsunięcie warunkowe, 2026-09-08 (88 testów pass)
 
 ## 3 — ZASILANIE (cel i intencja)
 - Rozstrzyga obecność ciałem w granicach planszy fizycznej: wewnątrz albo na zewnątrz. Nie ustala pozycji — ograniczona precyzja jest decyzją, nie usterką (ADR-011 punkt 1).
 - Blokuje integrację modułu bayo; pierwsza pozycja w kolejności rozwoju.
-- Pojęcia glosariusza: brak. `Strażnik GPS`, `plansza`, `kształt`, `bufor planszy`, `obecność ciałem` — TERMIN-KANDYDAT, zgłoszone do Toru glosariusza. W glosariuszu istnieje wyłącznie „Strażnik Kontekstu" — inne pojęcie, nie mylić.
+- Pojęcia glosariusza: brak. `Strażnik GPS`, `plansza`, `kształt`, `bufor planszy`, `obecność ciałem`, `Ostatni dowód Awatara` — TERMIN-KANDYDAT, zgłoszone do Toru glosariusza. W glosariuszu istnieje wyłącznie „Strażnik Kontekstu" — inne pojęcie, nie mylić.
 - Pozycja systemowa: **3** (impuls — obliczenie). Docelowe wykonanie: urządzenie Awatara (ADR-011 2.1), nie węzeł.
 
 ## 6 — FORMA (struktura i interfejsy)
 - **Struktura (stan zapisany):**
-  - `config/index.js` — elipsoida WGS84 (`POLOS_WIELKA_M`, `SPLASZCZENIE_ODWROTNE`), wyliczony `ZIEMIA.PROMIEN_SREDNI_M` (R1 = (2a+b)/3 wg IUGG), `ZAKRESY` współrzędnych, `TYPY_KSZTALTU`. Jedyne źródło stałych.
+  - `config/index.js` — elipsoida WGS84 (`POLOS_WIELKA_M`, `SPLASZCZENIE_ODWROTNE`), wyliczony `ZIEMIA.PROMIEN_SREDNI_M` (R1 = (2a+b)/3 wg IUGG), `ZAKRESY` współrzędnych, `TYPY_KSZTALTU`, `STANY_OBECNOSCI`, `ZRODLA_DOWODU`, `CZAS` (bezpiecznik ciszy 2 godziny wyliczany z nazwanych składników, nie wpisany w milisekundach). Jedyne źródło stałych.
   - `src/geometria/wspolrzedne.js` — `sprawdzWspolrzedne(punkt, nazwa)`; wspólna walidacja obu typów.
   - `src/geometria/okrag.js` — `odlegloscMetry(a, b)` (haversine na kuli, metry), `czyWewnatrzOkregu(punkt, ksztalt)`.
   - `src/geometria/wielokat.js` — `czyWewnatrzWielokata(punkt, ksztalt)` (test przecięć promienia, przedział półotwarty po szerokości) oraz `odlegloscOdWielokata` (odległość do najbliższej krawędzi, rzut na płaszczyznę lokalną).
   - `src/geometria/index.js` — fasada `czyWewnatrzKsztaltu`, `odlegloscOdKsztaltu`, `czyWewnatrzZBuforem`; kierowanie po polu `typ`.
-  - `src/obecnosc/stan.js` — `wykryjZmianeStanu(stan_poprzedni, punkt, ksztalt, nastawy)`; przekroczenie granicy z ADR-011 2.2 i 2.7.
-  - `src/obecnosc/index.js` — fasada obecności.
-  - `index.js` — kontrakt modułu: `{ konfig, geometria, obecnosc }`. `test/geometria.test.js`, `test/obecnosc.test.js`, `README.md`.
+  - `src/obecnosc/wejscie.js` — walidacja wspólna obu producentów meldunku: stan poprzedni, źródło dowodu planszy, chwila od węzła.
+  - `src/obecnosc/granica.js` — `wykryjZmianeStanu(stan_poprzedni, punkt, ksztalt, nastawy)`; przekroczenie granicy z ADR-011 2.2 i 2.7. Plik powstał z rozcięcia `stan.js` przy dołożeniu drugiego producenta.
+  - `src/obecnosc/cisza.js` — `wykryjSkutekCiszy(stan_poprzedni, ostatni_dowod, chwile, nastawy)`; bezpiecznik ciszy sprzętu z 2.8 i zsunięcie warunkowe z 2.9.
+  - `src/obecnosc/index.js` — fasada obecności: dwaj producenci meldunku.
+  - `index.js` — kontrakt modułu: `{ konfig, geometria, obecnosc }`. `test/geometria.test.js`, `test/obecnosc.test.js`, `test/cisza.test.js`, `test/bez_zegara.test.js`, `README.md`.
 - **Kontrakty wejścia:**
   - Punkt: `{ szerokosc_geo, dlugosc_geo }` w stopniach dziesiętnych, WGS84.
   - Kształt okrągły: `{ typ: 'okrag', srodek: {…}, promien_m }`.
   - Kształt wielokątny: `{ typ: 'wielokat', wierzcholki: [{…}, …] }`, co najmniej 3 wierzchołki.
-  - Nastawy planszy: `{ bufor_m, zrodlo_dowodu }` — obie wartości obowiązkowe, bez domyślnych.
-  - Stan poprzedni: `'obecny'` albo `'duch'`. Trzeciej wartości nie ma (Ziarno v13 punkt 2.3).
+  - Nastawy planszy dla detektora granicy: `{ bufor_m, zrodlo_dowodu }` — obie wartości obowiązkowe, bez domyślnych.
+  - Nastawy planszy dla ciszy: `{ okno_zsunietego_meldunku_ms, zrodlo_dowodu }` — obie obowiązkowe, bez domyślnych.
+  - Ostatni dowód Awatara: `{ rodzaj, chwila_uzyskania_ms }`, `rodzaj` z trzech wartości źródła dowodu. Pole Awatara, nie planszy — mówi, czym ten Awatar potwierdził obecność ostatnim razem (ADR-011 2.9).
+  - Chwile od węzła: `{ chwila_ostatniego_meldunku_ms, chwila_biezaca_ms }` w milisekundach uniksowych, konwencja `teraz` z modułu Auth. Moduł ich nie odczytuje, wyłącznie przyjmuje.
+  - Stan poprzedni: `'obecny'`, `'duch'` albo `'zsuniety'`. Trzecia wartość weszła z ADR-011 2.9; Ziarno v13 punkt 2.3 zamykało listę na dwóch przed rozstrzygnięciem punktu O7 i jest w tym miejscu nieaktualne.
 - **Kontrakty wyjścia:**
   - geometria: wartość logiczna (wewnątrz/na zewnątrz) albo odległość w metrach ze znakiem — ujemna wewnątrz, dodatnia na zewnątrz, zero na granicy.
-  - obecność: `{ stan, meldunek }`, gdzie `meldunek` to `null` przy braku zmiany albo `{ stan, zrodlo_dowodu }`. Meldunek nie niesie współrzędnych ani czasu — test tego pilnuje.
+  - obecność: `{ stan, meldunek }`, gdzie `meldunek` to `null` przy braku zmiany albo `{ stan, zrodlo_dowodu }`. Meldunek nie niesie współrzędnych — test tego pilnuje.
+  - Jedyny wyjątek co do czasu: meldunek stanu `zsuniety` niesie `wazny_do_ts` (ISO 8601). Punkt 2.9 nazywa go meldunkiem o czasie ważności — bez terminu byłby mocniejszy od tego, co zastąpił. Chwila pochodzi z wejścia podanego przez węzeł, nigdy z zegara urządzenia.
   - Współrzędne nie opuszczają modułu w żadnej postaci; nie ma kanału, którym mogłyby wyjść.
-- **Zależności zewnętrzne:** brak. Funkcje czyste, bez stanu, bez wejścia/wyjścia, bez zegara. Zegara nie będzie: chwilę rozstrzygającą nadaje węzeł (ADR-012 punkt 7). Przenośne na urządzenie bez przepisywania, gdy powstanie `frontend/`.
+- **Zależności zewnętrzne:** brak. Funkcje czyste, bez stanu, bez wejścia/wyjścia, bez zegara. Zegara nie będzie: chwilę rozstrzygającą nadaje węzeł (ADR-012 punkt 7). Odkąd cisza przyjmuje chwile na wejściu, zakaz ma własny dozór — `test/bez_zegara.test.js` czyta źródła modułu i odrzuca `Date.now()`, `new Date()` bez argumentu, `performance.now`, `process.hrtime`, `setTimeout` i `setInterval`. Przenośne na urządzenie bez przepisywania, gdy powstanie `frontend/`.
 - **Dane i stałe:** wyłącznie `config/`. Zakaz magic numbers utrzymany — promień Ziemi jest wyliczany z dwóch stałych elipsoidy, nie wpisany.
 
 ## 9 — REGULACJA (kontrola i stan)
@@ -44,18 +50,28 @@
   - Granica należy do zewnętrza — oba typy, wprost z ADR-011 2.3. Punkt na krawędzi i w wierzchołku wielokąta jest na zewnątrz tak samo jak punkt w odległości równej promieniowi okręgu. Kanon, nie wniosek z analogii. Przy buforze 0 reguła obowiązuje bez zmian.
   - `bufor_m` nieliczbowy, brakujący albo ujemny → odrzucenie. Bufor dokłada się na zewnątrz figury (ADR-011 2.4), więc wartość ujemna nie istnieje.
   - `zrodlo_dowodu` spoza trzech wartości albo brakujące → odrzucenie. „opaska" nie jest wartością tego pola (ADR-011 2.10).
-  - `stan_poprzedni` spoza dwóch wartości albo brakujący → odrzucenie. Stan nie jest zgadywany z pozycji.
+  - `stan_poprzedni` spoza trzech wartości albo brakujący → odrzucenie. Stan nie jest zgadywany z pozycji.
+  - `okno_zsunietego_meldunku_ms` nieliczbowe, brakujące albo ujemne → odrzucenie. Parametr organizatora nie ma wartości domyślnej (ADR-011 2.9).
+  - `ostatni_dowod` brakujący, o rodzaju spoza trzech wartości albo bez `chwila_uzyskania_ms` → odrzucenie. Bez chwili nie da się orzec, czy dowód istniał **przed** ciszą, a to jest cała treść punktu 2.9.
+  - Chwila od węzła nieliczbowa albo brakująca → odrzucenie. Moduł nie ma czym jej zastąpić.
+  - `chwila_biezaca_ms` wcześniejsza niż `chwila_ostatniego_meldunku_ms` → odrzucenie. Czas nie płynie wstecz; zgodność zegarów węzła nie jest przedmiotem tego modułu.
+  - Bezpiecznik ciszy: 2 godziny, kanon ADR-011 2.8, stała w `config/`. Osiągnięcie progu wywołuje skutek — interpretacja logiczna z powodu braku danych, punkt otwarty ADR-011 O12.
+  - Okno zsuniętego meldunku biegnie od początku ciszy, nie od chwili sprawdzenia. Ta sama chwila ostatniego meldunku zawsze daje tę samą chwilę ważności, niezależnie od tego, kiedy węzeł pyta.
+  - Cisza krótsza od bezpiecznika nie zmienia stanu; `duch` przy ciszy pozostaje `duchem` bez meldunku — bezpiecznik gasi obecność, nie uczestnictwo.
 - **Punkty otwarte:**
   - O1: **ZAMKNIĘTY 08.09.2026** — punkt na krawędzi i w wierzchołku wielokąta jest na zewnątrz. Ta sama reguła co dla okręgu, kanon ADR-011 2.3. Wniosek logiczny zniknął z kodu.
   - O2: **ZAMKNIĘTY 08.09.2026** — plansza nie może przecinać południka 180° ani obejmować bieguna. Taki kształt jest odrzucany jawnym błędem; wpisane do alternatyw odrzuconych ADR-011.
   - O3: **ZAMKNIĘTY 08.09.2026** — odległość po kuli, promień z WGS84 wzorem IUGG, jest kanonem. Błąd względny do 0,5% wobec elipsoidy (5 m przy promieniu 1 000 m) przyjęty świadomie jako mniejszy od zgrubności celowej; wpisane do konsekwencji ADR-011.
   - O4: `rejestr.json` nie istnieje, więc `modul.straznik` pozostaje adresem-kandydatem. **Otwarty.** Ziarno v13 punkt 2.2 nadaje temu modułowi adres `modul.straznik.gps` — kolizja z zapisem tego dokumentu i mapy projektu, do rozstrzygnięcia przy zasilaniu rejestru.
   - O5: odległość od krawędzi wielokąta liczona na płaszczyźnie lokalnej (rzut z cosinusem szerokości). Przy planszach kilometrowych błąd rzędu metrów; przy kształtach o rozpiętości dziesiątek stopni rośnie. Do potwierdzenia, że mieści się w zgrubności celowej. **Otwarty.**
-  - Uwaga o numeracji: O1–O4 to numeracja tego dokumentu. Punkty otwarte O1–O9 w ADR-011 dotyczą czego innego i się z nią nie mieszają.
-- **Decyzje:** ADR-011 (Strażnik GPS) — punkt 2.3. ADR-001 (stos Node.js).
+  - O6: przywrócenie mocniejszego poziomu po dotknięciu terminala **w trakcie** ciszy nie jest zbudowane ani rozstrzygnięte — punkt 2.9 mówi wyłącznie o dowodzie sprzed ciszy. **Otwarty**, ADR-011 O10.
+  - O7: wiek Ostatniego dowodu Awatara nie jest ograniczony — dotknięcie terminala sprzed trzech dni liczy się dziś tak samo jak sprzed godziny. Ograniczenia nie ma skąd wziąć. **Otwarty**, ADR-011 O11.
+  - Uwaga o numeracji: O1–O7 to numeracja tego dokumentu. Punkty otwarte O1–O12 w ADR-011 dotyczą czego innego i się z nią nie mieszają.
+- **Decyzje:** ADR-011 (Strażnik GPS) — punkty 2.2, 2.3, 2.7, 2.8, 2.9. ADR-012 (klucze Awatara) — punkt 7, chwila rozstrzygająca po stronie węzła. ADR-001 (stos Node.js).
 - **Historia zmian:**
   - 2026-09-08 — Krok 0: lokalizacja i układ plików, wariant B (moduł o szkielecie minimalnym) — zatwierdzony przez Suwerena.
   - 2026-09-08 — jednostka i model: metry, odległość po kuli, promień średni ze stałej w `config/` — rozstrzygnięcie Suwerena; zgrubność uznana za kanon ADR-011, nie za naruszenie zakazu algorytmów przybliżonych (ten dotyczy efemeryd).
   - 2026-09-08 — implementacja punktu 2.3: dwa testy geometryczne jako funkcje czyste, cyklem test-first. 31 testów pass; pełny backend 261 testów, 260 pass, 1 skip (wcześniejszy, QAC).
   - 2026-09-08 — rozstrzygnięcia Suwerena O1, O2, O3 wpisane do ADR-011 punkt 2.3, do alternatyw odrzuconych i do konsekwencji. Zachowanie kodu bez zmian — reguły już w nim stały; zmieniło się ich źródło: kanon zamiast wniosku logicznego. Dołożony test kształtu obejmującego biegun: 32 testy pass, pełny backend 262 testy, 261 pass, 1 skip.
   - 2026-09-08 — punkt 2.2, zakres zatwierdzony przez Suwerena: sam detektor przekroczenia granicy, bez bezpiecznika ciszy sprzętu. Układ plików wariant B (dwa pliki w `src/obecnosc/`, stałe w istniejącym `config/`). Bufor planszy wariant A: geometria uczy się odległości od kształtu, bufor zostaje osobnym polem zgodnie z ADR-011 2.4. Dwa cykle test-first; jeden test poprawiony przed implementacją, bo mierzył dokładność modelu zamiast reguły. Moduł 59 testów pass (44 geometria, 15 obecność), pełny backend 289 testów, 288 pass, 1 skip (wcześniejszy, QAC).
+  - 2026-09-08 — punkty 2.8 i 2.9, cztery rozstrzygnięcia Suwerena przed kodem: drugi dowód jest polem Awatara (nowy termin-kandydat „Ostatni dowód Awatara"), stan obecności rozszerzony do trzech wartości o `zsuniety`, długość okna zsuniętego meldunku parametrem organizatora bez domyślnej, bezpiecznik 2 godzin kanonem do `config/`. Czas wchodzi wyłącznie wejściem, dwiema chwilami od węzła — wariant B, zatwierdzony przed budową. `stan.js` rozcięty na `granica.js` i `cisza.js` zgodnie z planem Kroku 0, walidacja wspólna wydzielona do `wejscie.js` wzorem `geometria/wspolrzedne.js`. Zakaz odczytu zegara dostał własny dozór: `test/bez_zegara.test.js` czyta źródła modułu. Cykl test-first, 28 testów czerwonych przed implementacją. Moduł 88 testów pass (44 geometria, 16 obecność, 25 cisza, 3 zegar), pełny backend 318 testów, 317 pass, 0 fail, 1 skip (wcześniejszy, QAC).

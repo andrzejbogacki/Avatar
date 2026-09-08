@@ -35,12 +35,37 @@ const ZAKRESY = Object.freeze({
 // Dwa typy kanoniczne — ADR-011 2.3. Trzeciego typu nie ma.
 const TYPY_KSZTALTU = Object.freeze(['okrag', 'wielokat']);
 
-// Dwie wartości stanu obecności — Ziarno v13 punkt 2.3. Awatar, który nigdy się
-// nie zameldował, i uczestnik po rozładowaniu telefonu mają ten sam stan: duch.
-const STANY_OBECNOSCI = Object.freeze(['obecny', 'duch']);
+// Trzy wartości stanu obecności. Ziarno v13 punkt 2.3 zamykało listę na dwóch
+// — zamknięcie padło przed rozstrzygnięciem punktu O7, a ADR-011 2.9 jest
+// nowszy i obowiązuje: zsunięta obecność nie jest ani obecnością ciałem, ani
+// duchem. `zsuniety` żyje wyłącznie do chwili ważności swojego meldunku.
+const STANY_OBECNOSCI = Object.freeze(['obecny', 'duch', 'zsuniety']);
 
 // Źródło dowodu obecności — ADR-011 2.5. Pole obowiązkowe przy każdym meldunku.
 // „opaska" nie jest wartością tego pola (ADR-011 2.10).
 const ZRODLA_DOWODU = Object.freeze(['terminal', 'nadajnik', 'brak']);
 
-module.exports = { ZIEMIA, ZAKRESY, TYPY_KSZTALTU, STANY_OBECNOSCI, ZRODLA_DOWODU };
+// Te same trzy wartości opisują dwie różne rzeczy i nie wolno ich sklejać:
+// `zrodlo_dowodu` jest polem planszy i mówi, co plansza dopuszcza (Ziarno v12
+// punkt 1.5); `ostatni_dowod.rodzaj` jest polem Awatara i mówi, czym ten
+// Awatar potwierdził obecność ostatnim razem. Punkt 2.9 pyta o Awatara.
+// Zbiór wartości wspólny — rekord wskaźnikowy zamiast duplikatu (KONWENCJE 4).
+
+// Czas. Moduł nie ma zegara i mieć nie będzie — chwile podaje węzeł (ADR-012
+// punkt 7). Stąd pochodzi wyłącznie długość bezpiecznika, nigdy „teraz".
+const SEKUND_W_GODZINIE = 3600;
+const MILISEKUND_W_SEKUNDZIE = 1000;
+// ADR-011 2.8 — kanon, nie parametr organizatora: dotyczy wiarygodności dowodu,
+// nie kształtu gry. Długość okna zsuniętego meldunku (2.9) to co innego —
+// tamta jest parametrem organizatora i dlatego jej tu nie ma.
+const GODZIN_BEZPIECZNIKA_CISZY = 2;
+
+const CZAS = Object.freeze({
+    SEKUND_W_GODZINIE,
+    MILISEKUND_W_SEKUNDZIE,
+    GODZIN_BEZPIECZNIKA_CISZY,
+    BEZPIECZNIK_CISZY_MS:
+        GODZIN_BEZPIECZNIKA_CISZY * SEKUND_W_GODZINIE * MILISEKUND_W_SEKUNDZIE,
+});
+
+module.exports = { ZIEMIA, ZAKRESY, TYPY_KSZTALTU, STANY_OBECNOSCI, ZRODLA_DOWODU, CZAS };

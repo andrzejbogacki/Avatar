@@ -103,6 +103,16 @@ organizatora.
 Utrata sygnału i rozładowany telefon uruchamiają bezpiecznik czasowy — 2 godziny
 do wylogowania. To inny mechanizm niż przekroczenie granicy.
 
+Rozróżnienie, z którego bierze się cały punkt: system nie dowiaduje się, że
+Awatar wyszedł. Dowiaduje się, że przestał potwierdzać. Wyjście ma werdykt
+i gasi natychmiast (2.7); cisza werdyktu nie ma i dlatego dostaje bezpiecznik.
+
+**Dwie godziny są kanonem, nie parametrem organizatora.** Wartość dotyczy
+wiarygodności dowodu, nie kształtu gry — organizator nie dostaje jej do
+nastawiania, bo skracając ją albo wydłużając zmieniałby to, ile znaczy cisza,
+a nie to, jak gra się toczy. Stała mieszka w `config/` modułu. Długość okna
+zsuniętego meldunku z punktu 2.9 jest czym innym i dlatego jest parametrem.
+
 ### 2.9 Zsunięcie o poziom przysługuje warunkowo
 
 Po ucichnięciu telefonu obecność schodzi na meldunek o czasie ważności
@@ -113,7 +123,22 @@ bezpiecznika.
 Powód: meldunek o czasie ważności nigdy nie był kanałem samodzielnym. Brak
 sygnału nie może dawać więcej niż sygnał.
 
-**Parametr organizatora:** długość okna zsuniętego meldunku.
+**Drugi dowód jest faktem o Awatarze, nie o planszy.** Awatar niesie własne
+pole — ostatni potwierdzony dowód obecności (`terminal`, `nadajnik` albo
+`brak`) wraz z chwilą jego uzyskania. Pole planszy `zrodlo_dowodu` (2.5)
+zostaje osobno i mówi co innego: co plansza dopuszcza. Plansza wyposażona
+w terminal nie dowodzi niczego o człowieku, który go nie dotknął. Nazwa
+**Ostatni dowód Awatara** wchodzi do glosariusza jako TERMIN-KANDYDAT.
+
+**Stan zsunięty jest trzecią wartością obecności.** `obecny`, `duch`,
+`zsuniety`. Zmiana wobec Ziarna Transferu v13 punkt 2.3, które zamykało listę
+na dwóch wartościach: zamknięcie padło przed rozstrzygnięciem punktu otwartego
+O7, a ten punkt jest od niego nowszy. Zsunięta obecność nie jest ani obecnością
+ciałem, ani duchem — żyje wyłącznie do chwili ważności swojego meldunku
+i wygasa do `duch`, jeżeli telefon się nie odezwie.
+
+**Parametr organizatora:** długość okna zsuniętego meldunku. Bez wartości
+domyślnej — jej brak jest jawnym błędem, nigdy cichym zerem.
 
 ### 2.10 Opaska daje obecność ciałem, nie daje podpisu
 
@@ -149,6 +174,9 @@ autoryzuje hasło konta. Rozstrzygnięcia szczegółowe: ADR-012.
 | opaska z własnym kluczem podpisu | sprzęt bez ekranu nie ma czym autoryzować; zabrana opaska daje napastnikowi ważne podpisy |
 | opaska wyłącznie przedłużająca obecność zaczepioną | powiela regułę zsunięcia warunkowego, nie wnosi nowej |
 | zegar urządzenia jako chwila rozstrzygająca | antydatowanie przez posiadacza przejętego sprzętu |
+| pole planszy `zrodlo_dowodu` jako drugi dowód z punktu 2.9 | odpowiada na inne pytanie: czym plansza *dopuszcza* potwierdzać, nie czym ten Awatar potwierdził. Terminal na planszy dawałby zsunięcie każdemu, kto go nigdy nie dotknął |
+| okno zsuniętego meldunku liczone od chwili sprawdzenia | późniejsze zapytanie przedłużałoby obecność, której nikt nie potwierdza; okno biegnie od początku ciszy |
+| dwie godziny bezpiecznika jako parametr organizatora | nastawa zmieniałaby to, ile znaczy cisza — czyli siłę dowodu, nie kształt gry |
 | plansza przecinająca południk 180° albo obejmująca biegun | drugi test geometryczny dla kształtu spoza zasięgu gry; cichy zły werdykt na granicy kosztuje więcej niż jawna odmowa zamrożenia |
 
 ---
@@ -170,6 +198,11 @@ autoryzuje hasło konta. Rozstrzygnięcia szczegółowe: ADR-012.
   Precyzja pozycji nie jest tu przedmiotem rozstrzygnięcia.
 - Organizator nie założy planszy na przecięciu południka 180° ani wokół
   bieguna. Taki kształt nie ma obejścia — ma odmowę.
+- Stan obecności ma trzy wartości, nie dwie. Każdy odbiorca meldunku musi znać
+  `zsuniety` i wiedzieć, że ten stan sam z siebie wygasa.
+- Awatar zyskuje pole własne — ostatni dowód obecności wraz z chwilą uzyskania.
+  Bez niego punktu 2.9 nie da się rozstrzygnąć, bo pole planszy odpowiada na
+  inne pytanie.
 
 **Wymagane do zbudowania:**
 
@@ -192,6 +225,9 @@ autoryzuje hasło konta. Rozstrzygnięcia szczegółowe: ADR-012.
 | O7 | padnięcie telefonu | ZAMKNIĘTY, Panel 15 — punkt 2.9 |
 | O8 | opaska bez telefonu | ZAMKNIĘTY, Panel 15 — punkt 2.10 |
 | **O9** | **[BRAK DANYCH]** — treść do odtworzenia z Ziarna Transferu v13 | otwarty |
+| **O10** | dowód uzyskany **w trakcie** ciszy — odbicie przy terminalu przy padniętym telefonie. Ziarno v12 punkt 1.11 mówi, że przywraca mocniejszy poziom; punkt 2.9 rozstrzyga wyłącznie dowód sprzed ciszy. Mechanizm przywracania nierozstrzygnięty i niezbudowany | otwarty |
+| **O11** | ważność Ostatniego dowodu Awatara — czy dotknięcie terminala sprzed trzech dni nadal jest drugim dowodem. Dziś moduł nie ogranicza wieku dowodu, bo ograniczenia nie ma skąd wziąć | otwarty |
+| **O12** | próg czasowy: czy upływ **równy** dwóm godzinom już gasi, a upływ równy końcowi okna już wygasza zsunięcie. Kod przyjmuje „osiągnięcie progu wywołuje skutek" jako **interpretację logiczną z powodu braku danych** — do potwierdzenia albo odwrócenia przez Suwerena | otwarty |
 
 Poza numeracją, do rozstrzygnięcia osobno:
 

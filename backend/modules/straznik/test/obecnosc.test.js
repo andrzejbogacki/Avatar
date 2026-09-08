@@ -2,8 +2,9 @@
 
 // Strażnik GPS — detektor przekroczenia granicy (ADR-011 punkty 2.2 i 2.7).
 // Meldunek powstaje wyłącznie w chwili zmiany stanu; cisza znaczy „bez zmian"
-// (Ziarno v12 §1.10). Stan ma dwie wartości — Ziarno v13 §2.3, trzeciej nie ma.
+// (Ziarno v12 §1.10). Stan ma trzy wartości — `zsuniety` weszło z ADR-011 2.9.
 // Czas nie wchodzi: chwilę rozstrzygającą nadaje węzeł (ADR-012 punkt 7).
+// Bezpiecznik ciszy sprzętu i zsunięcie warunkowe — `test/cisza.test.js`.
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -90,7 +91,7 @@ test('brak źródła dowodu jest odrzucany, nie zastępowany wartością „brak
     );
 });
 
-test('stan poprzedni spoza dwóch wartości jest odrzucany — trzeciej nie ma', () => {
+test('stan poprzedni spoza trzech wartości jest odrzucany — czwartej nie ma', () => {
     assert.throws(
         () => wykryjZmianeStanu('nieznany', WEWNATRZ, OKRAG, NASTAWY),
         /stan_poprzedni/,
@@ -125,9 +126,21 @@ test('detektor działa na wielokącie tak samo jak na okręgu', () => {
     assert.equal(wykryjZmianeStanu('obecny', { szerokosc_geo: 1, dlugosc_geo: 3 }, kwadrat, NASTAWY).stan, 'duch');
 });
 
+test('zsunięta obecność wraca pod werdykt pozycji — odezwanie się kończy ciszę', () => {
+    const powrot = wykryjZmianeStanu('zsuniety', WEWNATRZ, OKRAG, NASTAWY);
+    const wygasniecie = wykryjZmianeStanu('zsuniety', ZA_GRANICA, OKRAG, NASTAWY);
+
+    assert.equal(powrot.stan, 'obecny');
+    assert.equal(powrot.meldunek.stan, 'obecny');
+    assert.equal(wygasniecie.stan, 'duch');
+    assert.equal(wygasniecie.meldunek.stan, 'duch');
+});
+
 test('kontrakt modułu: Strażnik wystawia detektor obok geometrii', () => {
     const straznik = require('../index');
     assert.equal(typeof straznik.obecnosc.wykryjZmianeStanu, 'function');
-    assert.deepEqual(straznik.konfig.STANY_OBECNOSCI, ['obecny', 'duch']);
+    // Trzecia wartość weszła z ADR-011 2.9 — Ziarno v13 §2.3 zamykało listę
+    // przed rozstrzygnięciem punktu O7. Obowiązuje ADR, nowszy.
+    assert.deepEqual(straznik.konfig.STANY_OBECNOSCI, ['obecny', 'duch', 'zsuniety']);
     assert.deepEqual(straznik.konfig.ZRODLA_DOWODU, ['terminal', 'nadajnik', 'brak']);
 });

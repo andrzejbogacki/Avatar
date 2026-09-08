@@ -186,7 +186,7 @@
             "sciezka": "backend/modules/straznik/",
             "dokumentacja": "docs/moduly/straznik.md",
             "status": "piaskownica",
-            "stan_kodu": "geometria planszy z buforem (ADR-011 2.3, 2.4) i detektor przekroczenia granicy (2.2, 2.7) — 59 testów pass; bezpiecznik ciszy sprzętu, opaska i podpis kształtu niezbudowane",
+            "stan_kodu": "geometria planszy z buforem (ADR-011 2.3, 2.4), detektor przekroczenia granicy (2.2, 2.7) oraz bezpiecznik ciszy sprzętu ze zsunięciem warunkowym (2.8, 2.9) — 88 testów pass; opaska (2.10) i podpis kształtu (2.6) niezbudowane",
             "punkt_wejscia": "backend/modules/straznik/index.js",
             "testy": "cd backend && npm test",
             "zaleznosci_oczekujace": [],
