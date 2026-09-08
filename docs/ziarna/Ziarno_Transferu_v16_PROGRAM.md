@@ -40,10 +40,31 @@ found", podczas gdy ten sam klucz odczytuje `origin` bez przeszkód. Skażona
 historia nie istnieje już publicznie. Procedura z Ziarna v15 sekcja 7 zamknięta
 w całości.
 
-**Stara historia żyje wyłącznie lokalnie** — gałąź `stare-main` i bundle
-z 27.08.2026 w dwóch miejscach. Skasowanie tej gałęzi albo katalogu `.git`
-oznacza utratę bezpowrotną: nie ma już zdalnego, z którego dałoby się ją
-pobrać.
+**Stara historia żyje wyłącznie lokalnie.** Skasowanie gałęzi `stare-main`
+albo katalogu `.git` oznacza utratę bezpowrotną: nie ma już zdalnego, z którego
+dałoby się ją pobrać. Dlatego 08.09.2026 wykonano bundle pełnej historii —
+94 commity, ref `refs/heads/stare-main` na `747c07f` — w dwóch lokalizacjach:
+
+```
+/Users/andrzej/Documents/Avatar-stare-main-2026-09-08.bundle
+/Volumes/Modele i Dane/Avatar-stare-main-2026-09-08.bundle
+```
+
+543 159 bajtów, SHA256 obu kopii identyczne:
+`b740a4a70918977a2b5b21aa8a9b2f5d1895af32f7fa55ff2c21720d0f5c9c99`.
+`git bundle verify` zwraca „complete history".
+
+**Odtworzenie wymaga jawnej gałęzi** — bundle niesie `stare-main`, nie `HEAD`,
+więc zwykłe `git clone` daje pusty katalog roboczy:
+
+```bash
+git clone -b stare-main "/Volumes/Modele i Dane/Avatar-stare-main-2026-09-08.bundle" odtworzenie
+```
+
+Sprawdzone odtworzeniem z kopii na wolumenie zewnętrznym: 94 commity,
+221 plików, hasz drzewa `81c96ac` zgodny z gałęzią w repozytorium.
+Starszy bundle z 27.08.2026 (`Avatar-backup-galezie-2026-08-27.bundle`)
+zostaje, ale obejmuje stan sprzed czternastu commitów tej sesji.
 
 **Blokada techniczna wprowadzona 08.09.2026:** adres push zdalnego `stare`
 ustawiony na `no_push`. Odczyt działa, wypchnięcie odmawia. Zdjęcie blokady
