@@ -289,7 +289,12 @@ const serwer = http.createServer(async (req, res) => {
         return;
     }
 
-    if (req.method === 'GET' && req.url.startsWith('/pobierz/')) {
+    // Paczki do pobrania — wyłączone domyślnie (REGULA_DANYCH_TESTEROW 6.4).
+    // Paczka backupu mogła nieść profile, a trasa wystawia ją bez logowania.
+    // Na czas testu w terenie katalog zostaje pusty, a trasa nie istnieje;
+    // włączenie wymaga jawnej zgody operatora przez AVATAR_TRASA_POBIERANIA=1.
+    if (req.method === 'GET' && req.url.startsWith('/pobierz/')
+        && process.env.AVATAR_TRASA_POBIERANIA === '1') {
         const PAKIETY_DIR = path.join(PUBLIC_DIR, 'pobierz');
         const zadanaNazwa = decodeURIComponent(req.url.slice('/pobierz/'.length).split('?')[0]);
         const sciezka = path.join(PAKIETY_DIR, zadanaNazwa);

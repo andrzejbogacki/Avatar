@@ -1,0 +1,33 @@
+# Wykluczenia kopii zapasowej — REGULA_DANYCH_TESTEROW.md punkt 6.4
+#
+# Kopia zapasowa nie obejmuje danych testerów. Backup obejmuje kod
+# i dokumenty; katalogi profili, kont, sald oraz kontener wejściowy
+# są z niego wyłączone.
+#
+# Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego,
+# więc dane skasowane na żądanie testera przetrwałyby w kopii, a obietnica
+# usunięcia z punktu 6 byłaby niespełniona. Cena: awaria dysku kasuje dane
+# testu. Przy kilku testerach — akceptowalne.
+#
+# Ścieżki względem korzenia repozytorium. Kontener wejściowy, tabela
+# wiążąca i oba rejestry leżą poza repozytorium — ich katalog dopisuje
+# operator, bo tylko on zna jego położenie (punkty 2 i 7).
+
+backend/modules/qac/profiles/
+backend/modules/auth/accounts/
+backend/modules/auth/zaproszenia/
+backend/modules/ps/profile/
+backend/modules/wymiennik/salda/
+backend/modules/wymiennik/tokeny/
+backend/modules/wymiennik/transakcje/
+backend/modules/wymiennik/oferty/
+backend/modules/rezonator/zrodla/
+backend/dev_public/pobierz/
+
+# Czynności jednorazowe na węźle przed wejściem pierwszego testera:
+#  1. wyczyścić backend/dev_public/pobierz/ — katalog trzymał paczki backupu
+#     udostępniane przez trasę HTTP; trasa jest teraz domyślnie wyłączona
+#     i wymaga AVATAR_TRASA_POBIERANIA=1,
+#  2. usunąć z istniejących kopii zapasowych paczki zawierające profile,
+#  3. wpisać powyższą listę do narzędzia backupu i potwierdzić odczytem,
+#     że katalogi nie trafiają na nośnik.
