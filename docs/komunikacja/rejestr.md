@@ -14,6 +14,7 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 15 | 08.09.2026 | Opus 5 | 1 | 1 | 5 | 1 | 0 | 0 | 8 | 20 |
 | 15 | 08.09.2026 | Fable 5.1 | 0 | 0 | 2 | 0 | 0 | 0 | 2 | 2 |
 | 16 | 09.09.2026 | Opus 5 | 0 | 3 | 0 | 0 | 0 | 0 | 3 | 3 |
+| 17 | 16.09.2026 | Opus 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 
 ## Dziennik
 
@@ -40,3 +41,5 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 09.09.2026 | 16 | Opus 5 | E | „sesja programowa" poprawiona w CLAUDE.md na „sesja pracy", podczas gdy nazwy plików Ziaren niosą dalej PROGRAM | nazwa pliku jest identyfikatorem zamkniętego zapisu, nie tekstem dokumentu — reguła nazewnicza jej nie obejmuje |
 | 09.09.2026 | 16 | Opus 5 | — | trzy zatrzymania Code przed dopisaniem czegoś, czego kanon nie daje: czas ważności meldunku bez telefonu, piąte znaczenie słowa sesja, brak liczby dla wieku Ostatniego dowodu Awatara. Wszystkie trzy słuszne | trafienia, nie tarcia — zatrzymanie przed konfabulacją jest wykonaniem reguły |
 | 09.09.2026 | 16 | Opus 5 | E | **wzorzec:** litera E po raz trzeci w trzech kolejnych panelach — 14, 15, 16. To nie jest pojedyncze wystąpienie, tylko stała słabość nazewnicza | nazwę sprawdza się na dwuznaczność przed zapisem do kanonu, nie po zgłoszeniu przez Suwerena |
+| 16.09.2026 | 17 | Opus 5 | — | zadanie skryptu usuwania danych testera wskazywało punkt 6 dokumentu, którego nie było ani w drzewie roboczym, ani w git ls-files, ani w historii żadnej gałęzi; zamiast wymyślić format rejestru usunięć — stop i odczyt stanu czterech magazynów | trafienie: brakujący dokument nazwany po odczycie, nie po domyśle |
+| 16.09.2026 | 17 | Opus 5 | — | zgoda testera skierowana do commitu zawierała w wierszu 18 miejscowość węzła; git grep wykazał, że repozytorium jej dotąd nie zawierało, a odczyt GitHub API — że jest publiczne; commit wstrzymany, decyzja do Suwerena | trafienie: widoczność repozytorium sprawdzona odczytem przed zapisem nieodwracalnym |
