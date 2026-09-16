@@ -2,6 +2,7 @@
 
 // Magazyn kont (pozycja 6 — forma): JSON per avatar_id (ADR-002).
 const fs = require('node:fs/promises');
+const { existsSync } = require('node:fs');
 const path = require('node:path');
 
 const konfig = require('../../config');
@@ -37,6 +38,16 @@ class MagazynKont {
             throw new Error(`Nieprawidłowy avatar_id: wymagany wzorzec ${konfig.konta.WZORZEC_AVATAR_ID}`);
         }
         return path.join(this.katalog, `${avatar_id}.json`);
+    }
+
+    // Sprawdzenie synchroniczne — weryfikacja sesji jest synchroniczna,
+    // a musi wiedzieć, czy konto jeszcze istnieje (REGULA_DANYCH_TESTEROW 6.3).
+    istniejeKontoSync(avatar_id) {
+        try {
+            return existsSync(this.sciezka(avatar_id));
+        } catch {
+            return false; // avatar_id niezgodny ze wzorcem — konta takiego nie ma
+        }
     }
 
     async odczytajKonto(avatar_id) {

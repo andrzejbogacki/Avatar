@@ -43,7 +43,17 @@ class UslugaLogowania {
     }
 
     ktoZalogowany(id_sesji) {
-        return this.sesje.weryfikujSesje(id_sesji);
+        const wynik = this.sesje.weryfikujSesje(id_sesji);
+        if (wynik.status !== 'aktywna') return wynik;
+        // Usunięcie konta kasuje aktywną sesję natychmiast, bez czekania na
+        // restart serwera (REGULA_DANYCH_TESTEROW 6.3). Skrypt usuwania działa
+        // w osobnym procesie i do tej mapy nie sięga — brak pliku konta jest
+        // sygnałem, który ten proces widzi przy najbliższym żądaniu.
+        if (!this.magazyn.istniejeKontoSync(wynik.avatar_id)) {
+            this.sesje.uniewaznijSesjeAwatara(wynik.avatar_id);
+            return { status: 'brak_konta' };
+        }
+        return wynik;
     }
 
     async aktywujKonto({ avatar_id, token, nowe_haslo }) {
