@@ -73,12 +73,56 @@ Punkt otwarty (poza v1): korekta po wystawieniu certyfikatów zewnętrznych unie
 ## 6. Usunięcie danych
 
 Tester ma prawo do usunięcia danych na żądanie, wykonanego w jednym kroku.
+Skrypt przyjmuje `avatar_id`. Operacja jest nieodwracalna.
 
-Skrypt przyjmuje `avatar_id` i usuwa: profil QAC, konto auth, profil Protokołu Suwerenności, saldo wymiennika, rekord w kontenerze wejściowym, wpis w tabeli wiążącej. Następnie dopisuje wiersz do rejestru usunięć.
+### 6.1 Magazyny własne testera
 
-Skrypt musi być napisany i sprawdzony na profilu syntetycznym **przed** wejściem pierwszego testera.
+1. `qac/profiles/<avatar_id>.json` — profil, wszystkie wersje, wraz z `.kosz/`
+2. `auth/accounts/<avatar_id>.json` — konto
+3. `ps/profile/<avatar_id>.json` — profil Protokołu Suwerenności
+4. `wymiennik/salda/<avatar_id>.json` — saldo
+5. kontener wejściowy — rekord danych urodzeniowych, wszystkie wersje
+6. tabela wiążąca — wpis `avatar_id → imię i nazwisko`
+7. `wymiennik/tokeny/` — tokeny klasy `avatar` z polem `emitent = avatar_id`
+8. `rezonator/zrodla/` — źródła z polem `wlasciciel = avatar_id`
 
-Uwaga: `rm -rf` omija Kosz. Operacja jest nieodwracalna.
+### 6.2 Ślady w danych innych Awatarów
+
+Identyfikator usuwanego testera pozostaje danymi testera także wtedy, gdy leży w cudzym pliku. Skrypt usuwa jego wpisy, cudzych profili poza tym nie modyfikuje:
+
+- `ps/profile/*.json` → `poziomy_obserwatorow[<avatar_id>]`
+- `ps/profile/*.json` → `nadpisania[]` z `obserwator = avatar_id`
+- `rejestr_dostepu` oraz `zgody_na_kontakt` — wpisy z tym identyfikatorem
+- `auth/zaproszenia/*.json` — rekordy z `zapraszajacy` lub `kandydat_avatar_id`
+- `wymiennik/transakcje/` i `wymiennik/oferty/` — rekordy z tym identyfikatorem po dowolnej stronie
+- certyfikaty i poręczenia **wystawione przez** usuwanego testera u innych Awatarów — usuwane. Certyfikat bez wystawcy jest nieweryfikowalny.
+
+### 6.3 Sesja
+
+Usunięcie konta kasuje aktywną sesję z pamięci procesu. Tester traci dostęp natychmiast, bez czekania na restart serwera.
+
+### 6.4 Kopia zapasowa
+
+**Kopia zapasowa nie obejmuje danych testerów.** Backup obejmuje kod i dokumenty; katalogi profili, kont, sald i kontener wejściowy są z niego wyłączone.
+
+Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego, więc obietnica usunięcia byłaby niespełniona. Cena: awaria dysku kasuje dane testu. Przy kilku testerach — akceptowalne.
+
+Katalog `backend/dev_public/pobierz/` zostaje wyczyszczony i wyłączony na czas testu.
+
+### 6.5 Rejestr
+
+Skrypt dopisuje wiersz do rejestru usunięć: `avatar_id`, znacznik czasu, lista faktycznie usuniętych obiektów, lista nieznalezionych.
+Uzupełnia też pole „data usunięcia" w rejestrze testerów z punktu 7.
+
+### 6.6 Wymagania wykonawcze
+
+- tryb `--dry-run` — raport bez kasowania
+- bez flagi: potwierdzenie przez wpisanie `avatar_id`
+- brak pliku nie jest błędem, trafia do raportu jako „nie znaleziono"
+- przerwanie, gdy `avatar_id` nie występuje w żadnym magazynie
+- przy przerwaniu w połowie: rejestr zapisuje stan faktyczny, nie zamierzony
+- skrypt napisany i sprawdzony na profilu syntetycznym **przed** wejściem pierwszego testera
+- nie dotyka `PROFIL_BRZEGOWY_A` ani `profil_zimowy_A`
 
 ---
 
@@ -135,3 +179,21 @@ Odpowiedź na pytanie o statystyki: otrzymuje liczbę potwierdzonych obecności 
 ### 9.4 Zgoda na pokaz
 
 Odrębna od zgody na test. Tester może ją cofnąć w każdej chwili, bez wychodzenia z testu. Cofnięcie usuwa konto pokazowe i konto inwestora z jego listy wyjątków.
+
+---
+
+## 10. Certyfikaty, poręczenia i korekta daty
+
+Trzy odrębne byty, wcześniej mylone:
+
+1. **Certyfikat zewnętrzny** — poświadczenie, że Awatar opanował daną oś. Ocena jakości. **Wchodzi do v1.**
+2. **Poręczenie tożsamości** — poświadczenie, że wystawca spotkał osobę na żywo i ta osoba istnieje. Nie jest oceną. **Wchodzi do v1.**
+3. **Odzyskiwanie konta z fragmentów klucza** (krąg poręczycieli) — mechanizm kryptograficzny, nie certyfikat. **Poza v1, wersja druga.** W v1 utrata urządzenia oznacza założenie konta od nowa.
+
+Skutek dla punktu 5: pole `certyfikaty_zewnetrzne` **nie jest puste w v1** — wcześniejszy zapis przestaje obowiązywać.
+
+**Korekta daty urodzenia wobec certyfikatów:**
+- poręczenie tożsamości pozostaje ważne zawsze — data urodzenia nie ma wpływu na fakt spotkania,
+- przy korekcie system porównuje osie przed i po przeliczeniu,
+- certyfikaty na osie, które się zmieniły, otrzymują status **„do potwierdzenia"**; decyzję o podtrzymaniu podejmuje wystawca,
+- certyfikaty na osie niezmienione pozostają nietknięte.
