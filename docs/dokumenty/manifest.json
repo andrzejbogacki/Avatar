@@ -1,6 +1,6 @@
 {
   "wersja": 1,
-  "zbudowano_ts": "2026-07-13T18:04:33.553Z",
+  "zbudowano_ts": "2026-09-17T02:39:33.812Z",
   "dokumenty": [
     {
       "id": "strategia_sieci_suwerennych",
@@ -21,8 +21,8 @@
       "wersja_dokumentu": "v4",
       "format": "json",
       "sciezka": "docs/glosariusz.json",
-      "hash_zrodla": "6d07ce103006934fb5a261926f87ffc0a7cf67c8931acd1f99136e538d76169b",
-      "bajty": 99431
+      "hash_zrodla": "81ea7d3b096042b66337f389c6bc1d0918f229ebd512c6057c31088692bed957",
+      "bajty": 125937
     },
     {
       "id": "protokol_suwerennosci",
