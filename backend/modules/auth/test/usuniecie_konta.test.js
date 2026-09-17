@@ -1,8 +1,8 @@
 'use strict';
 
 // Sesja logowania pada wraz z kontem — REGULA_DANYCH.md punkt 6.3.
-// Skrypt usuwania danych Awatara działa w osobnym procesie i do mapy sesji
-// nie sięga; brakiem pliku konta sygnalizuje usunięcie działającemu serwerowi.
+// Dane Awatara kasuje człowiek poza tym procesem, więc mapa sesji nie dostanie
+// o tym sygnału; brak pliku konta jest jedynym, po którym serwer to pozna.
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -48,7 +48,8 @@ test('usunięcie pliku konta unieważnia sesję natychmiast, bez restartu', asyn
     const sesja = sesje.utworzSesje(WSPOLTWORCA);
     assert.equal(usluga.ktoZalogowany(sesja.id).status, 'aktywna');
 
-    // To robi skrypt usuwania — kasuje plik konta, nie dotykając procesu serwera.
+    // To robi operator przy kasowaniu ręcznym — plik konta znika, proces serwera
+    // nie zostaje o niczym powiadomiony.
     fs.unlinkSync(path.join(katalog, `${WSPOLTWORCA}.json`));
 
     assert.deepEqual(usluga.ktoZalogowany(sesja.id), { status: 'brak_konta' });
