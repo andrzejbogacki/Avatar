@@ -1,13 +1,13 @@
-# Wykluczenia kopii zapasowej — REGULA_DANYCH_TESTEROW.md punkt 6.4
+# Wykluczenia kopii zapasowej — REGULA_DANYCH.md punkt 6.4
 #
-# Kopia zapasowa nie obejmuje danych testerów. Backup obejmuje kod
+# Kopia zapasowa nie obejmuje danych Awatarów. Backup obejmuje kod
 # i dokumenty; katalogi profili, kont, sald oraz kontener wejściowy
 # są z niego wyłączone.
 #
 # Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego,
-# więc dane skasowane na żądanie testera przetrwałyby w kopii, a obietnica
+# więc dane skasowane na żądanie Awatara przetrwałyby w kopii, a obietnica
 # usunięcia z punktu 6 byłaby niespełniona. Cena: awaria dysku kasuje dane
-# testu. Przy kilku testerach — akceptowalne.
+# testu. Przy kilku Awatarach — akceptowalne.
 #
 # Ścieżki względem korzenia repozytorium. Kontener wejściowy, tabela
 # wiążąca i oba rejestry leżą poza repozytorium — ich katalog dopisuje
@@ -24,7 +24,7 @@ backend/modules/wymiennik/oferty/
 backend/modules/rezonator/zrodla/
 backend/dev_public/pobierz/
 
-# Czynności jednorazowe na węźle przed wejściem pierwszego testera:
+# Czynności jednorazowe na węźle przed wejściem pierwszego Awatara:
 #  1. wyczyścić backend/dev_public/pobierz/ — katalog trzymał paczki backupu
 #     udostępniane przez trasę HTTP; trasa jest teraz domyślnie wyłączona
 #     i wymaga AVATAR_TRASA_POBIERANIA=1,
