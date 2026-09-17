@@ -1,15 +1,17 @@
-# Reguła przechowywania danych testerów — wersja pokazowa v1
+# Reguła przechowywania danych
+
+Dokument podrzędny wobec `ZASADA_NADRZEDNA.md` — jest jej zastosowaniem, nie samodzielnym ustaleniem.
 
 Status: zatwierdzone 15.09.2026
-Docelowa ścieżka w repozytorium: `docs/dokumenty/REGULA_DANYCH_TESTEROW.md`
+Docelowa ścieżka w repozytorium: `docs/dokumenty/REGULA_DANYCH.md`
 
 ---
 
 ## 1. Zakres
 
-Dokument obowiązuje dla pierwszego testu w terenie, prowadzonego na prawdziwych danych kilku testerów (wariant A1: obliczenia na węźle).
+Dokument obowiązuje dla pierwszego testu w terenie, prowadzonego na prawdziwych danych kilku Awatarów (wariant A1: obliczenia na węźle).
 
-Obejmuje: dane urodzeniowe testerów (data, godzina, miejsce), wyniki wyliczone z tych danych, dane kont i profili.
+Obejmuje: dane urodzeniowe Awatarów (data, godzina, miejsce), wyniki wyliczone z tych danych, dane kont i profili.
 
 Nie obejmuje: poczty, transkryptów Claude Code i plików prywatnych na dysku Suwerena. Zakresem jest system, nie maszyna.
 
@@ -43,9 +45,9 @@ Reguła dotyczy także zrzutów ekranu, dokumentów i materiałów pokazowych.
 
 ## 4. Zakazy
 
-1. Dane testerów nigdy nie wchodzą do testów kodu. Fixture'y pozostają syntetyczne (`PROFIL_BRZEGOWY_A`, `profil_zimowy_A`).
-2. Profil realnego testera pokazywany inwestorowi wyłącznie za jego odrębną zgodą (punkt 9). Domyślnie pokaz idzie na koncie pokazowym.
-3. Profil testera nie trafia do okna rozmowy z modelem ani do Ziarna Transferu.
+1. Dane Awatarów nigdy nie wchodzą do testów kodu. Fixture'y pozostają syntetyczne (`PROFIL_BRZEGOWY_A`, `profil_zimowy_A`).
+2. Profil realnego Awatara pokazywany inwestorowi wyłącznie za jego odrębną zgodą (punkt 9). Domyślnie pokaz idzie na koncie pokazowym.
+3. Profil Awatara nie trafia do okna rozmowy z modelem ani do Ziarna Transferu.
 4. Osoby małoletnie nie biorą udziału w pierwszym teście.
 5. Współrzędne bieżące (Strażnik GPS) nie opuszczają telefonu — węzeł otrzymuje stan obecności, nie pozycję.
 
@@ -66,16 +68,16 @@ Historię wersji widzi wyłącznie właściciel profilu.
 
 Ręczna edycja liczb w profilu jest zakazana — profil musi wynikać z zapisanego wejścia.
 
-Punkt otwarty (poza v1): korekta po wystawieniu certyfikatów zewnętrznych unieważnia ich podstawę. W v1 pole `certyfikaty_zewnetrzne` jest puste.
+Wpływ korekty na certyfikaty — patrz punkt 10. Pole `certyfikaty_zewnetrzne` **nie jest puste w v1**.
 
 ---
 
 ## 6. Usunięcie danych
 
-Tester ma prawo do usunięcia danych na żądanie, wykonanego w jednym kroku.
+Awatar ma prawo do usunięcia danych na żądanie, wykonanego w jednym kroku.
 Skrypt przyjmuje `avatar_id`. Operacja jest nieodwracalna.
 
-### 6.1 Magazyny własne testera
+### 6.1 Magazyny własne Awatara
 
 1. `qac/profiles/<avatar_id>.json` — profil, wszystkie wersje, wraz z `.kosz/`
 2. `auth/accounts/<avatar_id>.json` — konto
@@ -88,31 +90,31 @@ Skrypt przyjmuje `avatar_id`. Operacja jest nieodwracalna.
 
 ### 6.2 Ślady w danych innych Awatarów
 
-Identyfikator usuwanego testera pozostaje danymi testera także wtedy, gdy leży w cudzym pliku. Skrypt usuwa jego wpisy, cudzych profili poza tym nie modyfikuje:
+Identyfikator usuwanego Awatara pozostaje danymi Awatara także wtedy, gdy leży w cudzym pliku. Skrypt usuwa jego wpisy, cudzych profili poza tym nie modyfikuje:
 
 - `ps/profile/*.json` → `poziomy_obserwatorow[<avatar_id>]`
 - `ps/profile/*.json` → `nadpisania[]` z `obserwator = avatar_id`
 - `rejestr_dostepu` oraz `zgody_na_kontakt` — wpisy z tym identyfikatorem
 - `auth/zaproszenia/*.json` — rekordy z `zapraszajacy` lub `kandydat_avatar_id`
 - `wymiennik/transakcje/` i `wymiennik/oferty/` — rekordy z tym identyfikatorem po dowolnej stronie
-- certyfikaty i poręczenia **wystawione przez** usuwanego testera u innych Awatarów — usuwane. Certyfikat bez wystawcy jest nieweryfikowalny.
+- certyfikaty i poręczenia **wystawione przez** usuwanego Awatara u innych Awatarów — usuwane. Certyfikat bez wystawcy jest nieweryfikowalny.
 
-### 6.3 Sesja
+### 6.3 Sesja logowania
 
-Usunięcie konta kasuje aktywną sesję z pamięci procesu. Tester traci dostęp natychmiast, bez czekania na restart serwera.
+Usunięcie konta kasuje aktywną sesję logowania z pamięci procesu. Awatar traci dostęp natychmiast, bez czekania na restart serwera.
 
 ### 6.4 Kopia zapasowa
 
-**Kopia zapasowa nie obejmuje danych testerów.** Backup obejmuje kod i dokumenty; katalogi profili, kont, sald i kontener wejściowy są z niego wyłączone.
+**Kopia zapasowa nie obejmuje danych Awatarów.** Backup obejmuje kod i dokumenty; katalogi profili, kont, sald i kontener wejściowy są z niego wyłączone.
 
-Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego, więc obietnica usunięcia byłaby niespełniona. Cena: awaria dysku kasuje dane testu. Przy kilku testerach — akceptowalne.
+Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego, więc obietnica usunięcia byłaby niespełniona. Cena: awaria dysku kasuje dane testu. Przy kilku Awatarach — akceptowalne.
 
 Katalog `backend/dev_public/pobierz/` zostaje wyczyszczony i wyłączony na czas testu.
 
 ### 6.5 Rejestr
 
 Skrypt dopisuje wiersz do rejestru usunięć: `avatar_id`, znacznik czasu, lista faktycznie usuniętych obiektów, lista nieznalezionych.
-Uzupełnia też pole „data usunięcia" w rejestrze testerów z punktu 7.
+Uzupełnia też pole „data usunięcia" w rejestrze Awatarów z punktu 7.
 
 ### 6.6 Wymagania wykonawcze
 
@@ -121,16 +123,18 @@ Uzupełnia też pole „data usunięcia" w rejestrze testerów z punktu 7.
 - brak pliku nie jest błędem, trafia do raportu jako „nie znaleziono"
 - przerwanie, gdy `avatar_id` nie występuje w żadnym magazynie
 - przy przerwaniu w połowie: rejestr zapisuje stan faktyczny, nie zamierzony
-- skrypt napisany i sprawdzony na profilu syntetycznym **przed** wejściem pierwszego testera
+- skrypt napisany i sprawdzony na profilu syntetycznym **przed** wejściem pierwszego Awatara
 - nie dotyka `PROFIL_BRZEGOWY_A` ani `profil_zimowy_A`
 
 ---
 
-## 7. Rejestr testerów
+## 7. Zgoda w aplikacji
 
-Poza repozytorium. Jeden wiersz na osobę: `avatar_id`, zakres udostępnionych danych, data zgody, data usunięcia.
+Zgoda nie jest dokumentem papierowym ani rejestrem prowadzonym obok. Jest przełącznikiem w aplikacji: Awatar widzi swoją listę udostępnień i zmienia ją sam, w każdej chwili.
 
-Zgoda pisemna, jedna strona: jakie dane, po co, gdzie leżą, jak długo, jak skasować. Zawiera zdanie o wynikach pochodnych (punkt 3).
+Zakres zgody obejmuje: udostępnienie profilu innym Awatarom oraz odrębnie — widoczność dla konta pokazowego lub imiennego inwestora (punkt 9).
+
+Cofnięcie jest natychmiastowe i nie wymaga powodu.
 
 ---
 
@@ -153,9 +157,9 @@ Trzy warianty. Wybór zależy od osoby.
 
 ### 9.1 Inwestor obcy — konto pokazowe
 
-Osobny Awatar w sieci (`avatar_id: DEMO-01`), data urodzenia wymyślona. Silnik liczy go tak samo jak każdy inny profil — jakości i dopasowania działają naprawdę, tylko za profilem nie stoi konkretna osoba.
+Osobny Awatar w sieci (`avatar_id: demo_01`), data urodzenia wymyślona. Silnik liczy go tak samo jak każdy inny profil — jakości i dopasowania działają naprawdę, tylko za profilem nie stoi konkretna osoba.
 
-Testerzy poszerzają mu widok przez **nadpisanie ręczne** w Protokole Relacji — wskazują konto pokazowe na liście wyjątków.
+Współtwórcy poszerzają mu widok przez **nadpisanie ręczne** w Protokole Relacji — wskazują konto pokazowe na liście wyjątków.
 
 **Zakaz:** nadawanie certyfikatów kontu pokazowemu w celu odblokowania dostępu. Certyfikat poświadcza prawdę o opanowaniu osi, nie jest przyciskiem dostępu. Użyty jako przycisk — traci wartość w całym systemie.
 
@@ -164,9 +168,9 @@ Testerzy poszerzają mu widok przez **nadpisanie ręczne** w Protokole Relacji �
 Zakłada własne konto na własnych danych i używa systemu, zamiast go oglądać. Przechodzi przez bramkę tak jak każdy: niesklasyfikowany → ściana → deklaracja jakości → uczeń → dostęp.
 
 Warunki:
-- podlega całej tej regule na równi z testerami (zgoda, kontener, prawo do usunięcia),
-- testerzy muszą wiedzieć, że wchodzi konkretna osoba z imienia — to zmienia ich decyzję o udostępnieniu,
-- **zakaz certyfikatów w obie strony.** Certyfikat między inwestorem a testerem po rozmowie o finansowaniu nie jest poświadczeniem prawdy.
+- podlega całej tej regule na równi z Awatarami (zgoda, kontener, prawo do usunięcia),
+- współtwórcy muszą wiedzieć, że wchodzi konkretna osoba z imienia — to zmienia ich decyzję o udostępnieniu,
+- **zakaz certyfikatów w obie strony.** Certyfikat między inwestorem a Awatarem po rozmowie o finansowaniu nie jest poświadczeniem prawdy.
 
 ### 9.3 Inwestor branżowy — właściciel obiektu
 
@@ -178,7 +182,7 @@ Odpowiedź na pytanie o statystyki: otrzymuje liczbę potwierdzonych obecności 
 
 ### 9.4 Zgoda na pokaz
 
-Odrębna od zgody na test. Tester może ją cofnąć w każdej chwili, bez wychodzenia z testu. Cofnięcie usuwa konto pokazowe i konto inwestora z jego listy wyjątków.
+Odrębna od zgody na udostępnianie profilu w sieci. Awatar może ją cofnąć w każdej chwili, bez opuszczania sieci. Cofnięcie usuwa konto pokazowe i konto inwestora z jego listy wyjątków.
 
 ---
 
