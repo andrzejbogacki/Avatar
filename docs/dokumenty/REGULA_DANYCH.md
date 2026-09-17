@@ -27,6 +27,8 @@ Trzy osobne byty, nigdy w jednym pliku:
 
 Skutek: wyciek katalogu profili daje zbiór liczb bez przypisania do człowieka.
 
+**Szyfrowanie — rozstrzygnięte:** kontener wejściowy i tabela wiążąca leżą wewnątrz zaszyfrowanego obrazu dysku macOS, zakładanego raz przez `hdiutil create` z hasłem (AES-256, sparsebundle). Obraz podłącza się ręcznie przy starcie serwera i odłącza po zakończeniu pracy. Kod niczego nie szyfruje sam — przy podłączonym obrazie widzi zwykłe pliki, przy odłączonym na dysku jest jeden nieczytelny plik. Hasło nie jest przechowywane na tym komputerze ani w pęku kluczy.
+
 Węzeł: Mac Mini, dysk zaszyfrowany (FileVault). Kopia zapasowa wyłącznie na nośniku zewnętrznym, szyfrowanym. Kopia na tym samym dysku nie jest kopią.
 
 Katalogi danych (`qac/profiles/`, `auth/accounts/`, `ps/profile/`, `wymiennik/salda/`) pozostają puste w repozytorium i wpisane w `.gitignore`.
@@ -74,8 +76,11 @@ Wpływ korekty na certyfikaty — patrz punkt 10. Pole `certyfikaty_zewnetrzne` 
 
 ## 6. Usunięcie danych
 
-Awatar ma prawo do usunięcia danych na żądanie, wykonanego w jednym kroku.
-Skrypt przyjmuje `avatar_id`. Operacja jest nieodwracalna.
+Awatar ma prawo do usunięcia danych na żądanie.
+
+**Automatyzacja odrzucona.** `scripts/raport-danych-awatara.js` przyjmuje `avatar_id` i wypisuje, gdzie leżą jego dane, z numerem podpunktu przy każdej pozycji. Niczego nie kasuje. Usunięcie wykonuje się ręcznie na podstawie raportu — przy kilkuosobowym kręgu współtwórców to wystarcza, a pełna automatyzacja wchodzi dopiero powyżej dziesięciu kont.
+
+Punkty 6.1–6.4 wyznaczają zakres usunięcia. Operacja jest nieodwracalna.
 
 ### 6.1 Magazyny własne Awatara
 
@@ -111,19 +116,16 @@ Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego, wi
 
 Katalog `backend/dev_public/pobierz/` zostaje wyczyszczony i wyłączony na czas pierwszej fazy.
 
-### 6.5 Rejestr
+### 6.5 Rejestr usunięć
 
-Skrypt dopisuje wiersz do rejestru usunięć: `avatar_id`, znacznik czasu, lista faktycznie usuniętych obiektów, lista nieznalezionych.
-Uzupełnia też pole „data usunięcia" w rejestrze Awatarów z punktu 7.
+Po wykonaniu usunięcia dopisywany jest wiersz: `avatar_id`, znacznik czasu, lista usuniętych obiektów.
 
 ### 6.6 Wymagania wykonawcze
 
-- tryb `--dry-run` — raport bez kasowania
-- bez flagi: potwierdzenie przez wpisanie `avatar_id`
-- brak pliku nie jest błędem, trafia do raportu jako „nie znaleziono"
-- przerwanie, gdy `avatar_id` nie występuje w żadnym magazynie
-- przy przerwaniu w połowie: rejestr zapisuje stan faktyczny, nie zamierzony
-- skrypt napisany i sprawdzony na profilu syntetycznym **przed** wejściem pierwszego Awatara
+- raport wypisuje przy każdym byciu numer podpunktu reguły
+- brak pliku nie jest błędem — trafia do raportu jako „nie znaleziono"
+- brak nastawy kontenera lub tabeli → „nastawa niepodana", nigdy milczenie
+- raport nie modyfikuje żadnego pliku; test bierze migawkę stanowiska przed i po
 - nie dotyka `PROFIL_BRZEGOWY_A` ani `profil_zimowy_A`
 
 ---
