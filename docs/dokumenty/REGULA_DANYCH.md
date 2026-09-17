@@ -95,7 +95,7 @@ Punkty 6.1–6.4 wyznaczają zakres usunięcia. Operacja jest nieodwracalna.
 
 ### 6.2 Ślady w danych innych Awatarów
 
-Identyfikator usuwanego Awatara pozostaje danymi Awatara także wtedy, gdy leży w cudzym pliku. Skrypt usuwa jego wpisy, cudzych profili poza tym nie modyfikuje:
+Identyfikator usuwanego Awatara pozostaje danymi Awatara także wtedy, gdy leży w cudzym pliku. Wpisy usuwa się ręcznie; raport wskazuje, gdzie leżą. Cudzych profili poza tym nie modyfikuje się:
 
 - `ps/profile/*.json` → `poziomy_obserwatorow[<avatar_id>]`
 - `ps/profile/*.json` → `nadpisania[]` z `obserwator = avatar_id`

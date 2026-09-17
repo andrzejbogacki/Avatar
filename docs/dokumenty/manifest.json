@@ -1,6 +1,6 @@
 {
   "wersja": 1,
-  "zbudowano_ts": "2026-09-17T03:09:38.443Z",
+  "zbudowano_ts": "2026-09-17T03:13:30.406Z",
   "dokumenty": [
     {
       "id": "zasada_nadrzedna",
@@ -54,8 +54,8 @@
       "wersja_dokumentu": "v1",
       "format": "markdown",
       "sciezka": "docs/dokumenty/REGULA_DANYCH.md",
-      "hash_zrodla": "27e7704a25319bf204ac8d2de4d86985cccdb08f41fcf5a2ce7c18defe995cef",
-      "bajty": 10734
+      "hash_zrodla": "6b4af566df547da9f9cd55204fb97a5a9b33c602ae3ff4f75590124381298f64",
+      "bajty": 10772
     }
   ]
 }
