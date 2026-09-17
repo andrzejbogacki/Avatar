@@ -65,7 +65,6 @@
                             <option value="">— wybierz profil —</option>
                         </select>
                     </div>
-                    <button type="button" class="btn-mala" id="usun-profil" disabled>Usuń</button>
                 </div>
             </div>
         </fieldset>
@@ -380,7 +379,6 @@ formularz.addEventListener('submit', async (e) => {
 // dostajemy 404 i formularz działa jak dawniej.
 const devProfile = document.getElementById('dev-profile');
 const listaProfili = document.getElementById('lista-profili');
-const usunBtn = document.getElementById('usun-profil');
 let profileDev = [];
 
 function dwaZnaki(n) {
@@ -402,7 +400,6 @@ async function wczytajListeProfili() {
             opcja.textContent = `${p.avatar_id} (${data}${p.dane_wejsciowe.miejsce ? ', ' + p.dane_wejsciowe.miejsce : ''})`;
             listaProfili.append(opcja);
         }
-        usunBtn.disabled = !listaProfili.value;
         devProfile.hidden = false;
     } catch {
         // Brak endpointu = brak narzędzi deweloperskich. Cisza jest tu poprawna.
@@ -411,7 +408,6 @@ async function wczytajListeProfili() {
 
 listaProfili.addEventListener('change', () => {
     const wpis = profileDev.find((p) => p.avatar_id === listaProfili.value);
-    usunBtn.disabled = !wpis;
     if (!wpis) return;
     const we = wpis.dane_wejsciowe;
 
@@ -432,23 +428,6 @@ listaProfili.addEventListener('change', () => {
     mapa.setView([we.obserwator.szerokosc_geo, we.obserwator.dlugosc_geo], Math.max(mapa.getZoom(), 10));
 
     odswiezPodgladUtc();
-});
-
-usunBtn.addEventListener('click', async () => {
-    const avatar_id = listaProfili.value;
-    if (!avatar_id) return;
-    if (!confirm(`Usunąć profil ${avatar_id}? Trafi do kosza (profiles/.kosz/).`)) return;
-    usunBtn.disabled = true;
-    try {
-        const odp = await fetch(`/api/qac/dev/profil/${encodeURIComponent(avatar_id)}`, { method: 'DELETE' });
-        const tresc = await odp.json();
-        if (!odp.ok) throw new Error(tresc.blad || 'Nie udało się usunąć profilu');
-        wynikDiv.innerHTML = `<p class="status ok">Profil ${avatar_id} przeniesiony do kosza.</p>`;
-        await wczytajListeProfili();
-    } catch (blad) {
-        wynikDiv.innerHTML = `<p class="status blad">${blad.message}</p>`;
-        usunBtn.disabled = false;
-    }
 });
 
 wczytajListeProfili();

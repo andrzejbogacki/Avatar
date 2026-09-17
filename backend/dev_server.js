@@ -197,24 +197,10 @@ const serwer = http.createServer(async (req, res) => {
             return;
         }
 
-        if (req.method === 'DELETE' && req.url.startsWith('/api/qac/dev/profil/')) {
-            try {
-                const avatar_id = decodeURIComponent(
-                    req.url.slice('/api/qac/dev/profil/'.length).split('?')[0]
-                );
-                // Walidacja avatar_id żyje w bramce 9b — tu tylko rozróżniamy
-                // odmowę autoryzacji (400) od braku profilu (404).
-                const kosz = await qac.usunProfil(avatar_id);
-                if (!kosz) {
-                    wyslijJson(res, 404, { blad: `Brak profilu: ${avatar_id}` });
-                    return;
-                }
-                wyslijJson(res, 200, { usuniety: avatar_id, kosz });
-            } catch (blad) {
-                wyslijJson(res, 400, { blad: blad.message });
-            }
-            return;
-        }
+        // Trasa DELETE /api/qac/dev/profil/<avatar_id> usunięta świadomie
+        // (REGULA_DANYCH punkt 6). Kasowała profil jednym żądaniem, z pominięciem
+        // raportu — droga obok reguły. Usunięcie danych jest czynnością ręczną
+        // na podstawie scripts/raport-danych-awatara.js.
     }
 
     if (req.method === 'GET' && req.url.startsWith('/api/geokodowanie/odwrotne')) {
