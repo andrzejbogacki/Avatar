@@ -1,7 +1,18 @@
 {
   "wersja": 1,
-  "zbudowano_ts": "2026-09-17T02:39:33.812Z",
+  "zbudowano_ts": "2026-09-17T02:40:02.828Z",
   "dokumenty": [
+    {
+      "id": "zasada_nadrzedna",
+      "tytul": "Zasada Nadrzędna — dokument fundamentalny projektu",
+      "typ": "zrodlo_prawdy",
+      "status": "piaskownica",
+      "wersja_dokumentu": "v1",
+      "format": "markdown",
+      "sciezka": "docs/dokumenty/ZASADA_NADRZEDNA.md",
+      "hash_zrodla": "09801846ab200bf88ce73301123235de9f4289d12c2a64e80d9f8f06a9c17863",
+      "bajty": 6845
+    },
     {
       "id": "strategia_sieci_suwerennych",
       "tytul": "Strategia Skalowalności i Odporności Sieci Suwerennych",
@@ -34,6 +45,17 @@
       "sciezka": "protokol_suwerennosci.json",
       "hash_zrodla": "011dee73a9182f96f77593729fd78fbc3e1bb6f2d7337e2c2a0c1a94571b270f",
       "bajty": 3655
+    },
+    {
+      "id": "regula_danych",
+      "tytul": "Reguła przechowywania danych",
+      "typ": "specyfikacja",
+      "status": "piaskownica",
+      "wersja_dokumentu": "v1",
+      "format": "markdown",
+      "sciezka": "docs/dokumenty/REGULA_DANYCH.md",
+      "hash_zrodla": "4a8a185565ff5793fa8ebca7561ae404594f1fef30ddff17c33346ff1ab0036b",
+      "bajty": 9945
     }
   ]
 }
