@@ -2,16 +2,16 @@
 
 Dokument podrzędny wobec `ZASADA_NADRZEDNA.md` — jest jej zastosowaniem, nie samodzielnym ustaleniem.
 
-Status: zatwierdzone 15.09.2026
+Status: zatwierdzone 15.09.2026, zaktualizowane 17.09.2026
 Docelowa ścieżka w repozytorium: `docs/dokumenty/REGULA_DANYCH.md`
 
 ---
 
 ## 1. Zakres
 
-Dokument obowiązuje dla pierwszego testu w terenie, prowadzonego na prawdziwych danych kilku Awatarów (wariant A1: obliczenia na węźle).
+Dokument obowiązuje dla pierwszej fazy działania sieci, prowadzonej na prawdziwych danych współtwórców (wariant A1: obliczenia na węźle). Nie ma odrębnej kategorii kont — reguła dotyczy każdego Awatara tak samo.
 
-Obejmuje: dane urodzeniowe Awatarów (data, godzina, miejsce), wyniki wyliczone z tych danych, dane kont i profili.
+Obejmuje: dane urodzeniowe (data, godzina, miejsce), wyniki wyliczone z tych danych, dane kont i profili.
 
 Nie obejmuje: poczty, transkryptów Claude Code i plików prywatnych na dysku Suwerena. Zakresem jest system, nie maszyna.
 
@@ -48,7 +48,7 @@ Reguła dotyczy także zrzutów ekranu, dokumentów i materiałów pokazowych.
 1. Dane Awatarów nigdy nie wchodzą do testów kodu. Fixture'y pozostają syntetyczne (`PROFIL_BRZEGOWY_A`, `profil_zimowy_A`).
 2. Profil realnego Awatara pokazywany inwestorowi wyłącznie za jego odrębną zgodą (punkt 9). Domyślnie pokaz idzie na koncie pokazowym.
 3. Profil Awatara nie trafia do okna rozmowy z modelem ani do Ziarna Transferu.
-4. Osoby małoletnie nie biorą udziału w pierwszym teście.
+4. Osoby małoletnie nie biorą udziału w pierwszej fazie.
 5. Współrzędne bieżące (Strażnik GPS) nie opuszczają telefonu — węzeł otrzymuje stan obecności, nie pozycję.
 
 ---
@@ -107,9 +107,9 @@ Usunięcie konta kasuje aktywną sesję logowania z pamięci procesu. Awatar tra
 
 **Kopia zapasowa nie obejmuje danych Awatarów.** Backup obejmuje kod i dokumenty; katalogi profili, kont, sald i kontener wejściowy są z niego wyłączone.
 
-Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego, więc obietnica usunięcia byłaby niespełniona. Cena: awaria dysku kasuje dane testu. Przy kilku Awatarach — akceptowalne.
+Uzasadnienie: żaden skrypt na węźle nie dosięgnie nośnika zewnętrznego, więc obietnica usunięcia byłaby niespełniona. Cena: awaria dysku kasuje dane pierwszej fazy. Przy kilkuosobowym kręgu współtwórców — akceptowalne.
 
-Katalog `backend/dev_public/pobierz/` zostaje wyczyszczony i wyłączony na czas testu.
+Katalog `backend/dev_public/pobierz/` zostaje wyczyszczony i wyłączony na czas pierwszej fazy.
 
 ### 6.5 Rejestr
 

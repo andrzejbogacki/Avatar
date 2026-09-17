@@ -117,6 +117,6 @@ Odpowiedź niezgodna z zasadą oznacza przeprojektowanie, nie obejście.
 
 ## 8. Dokumenty podrzędne
 
-Wszystkie pozostałe dokumenty projektu są **zastosowaniem** tej zasady, nie samodzielnymi ustaleniami. Dotyczy to w szczególności `REGULA_DANYCH_TESTEROW.md` i `PS_v1_dokument_zamykajacy.md`.
+Wszystkie pozostałe dokumenty projektu są **zastosowaniem** tej zasady, nie samodzielnymi ustaleniami. Dotyczy to w szczególności `REGULA_DANYCH.md` i `PS_v1_dokument_zamykajacy.md`.
 
 Sprzeczność między dokumentem podrzędnym a tym dokumentem oznacza błąd w dokumencie podrzędnym.
