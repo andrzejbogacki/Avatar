@@ -15,6 +15,7 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 15 | 08.09.2026 | Fable 5.1 | 0 | 0 | 2 | 0 | 0 | 0 | 2 | 2 |
 | 16 | 09.09.2026 | Opus 5 | 0 | 3 | 0 | 0 | 0 | 0 | 3 | 3 |
 | 17 | 16.09.2026 | Opus 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| 18 | 17.09.2026 | Opus 5 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 1 |
 
 ## Dziennik
 
@@ -43,3 +44,5 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 09.09.2026 | 16 | Opus 5 | E | **wzorzec:** litera E po raz trzeci w trzech kolejnych panelach — 14, 15, 16. To nie jest pojedyncze wystąpienie, tylko stała słabość nazewnicza | nazwę sprawdza się na dwuznaczność przed zapisem do kanonu, nie po zgłoszeniu przez Suwerena |
 | 16.09.2026 | 17 | Opus 5 | — | zadanie skryptu usuwania danych Awatara wskazywało punkt 6 dokumentu, którego nie było ani w drzewie roboczym, ani w git ls-files, ani w historii żadnej gałęzi; zamiast wymyślić format rejestru usunięć — stop i odczyt stanu czterech magazynów | trafienie: brakujący dokument nazwany po odczycie, nie po domyśle |
 | 16.09.2026 | 17 | Opus 5 | — | zgoda współtwórcy skierowana do commitu zawierała w wierszu 18 miejscowość węzła; git grep wykazał, że repozytorium jej dotąd nie zawierało, a odczyt GitHub API — że jest publiczne; commit wstrzymany, decyzja do Suwerena | trafienie: widoczność repozytorium sprawdzona odczytem przed zapisem nieodwracalnym |
+| 17.09.2026 | 18 | Opus 5 | O | hook pre-commit napisany na założeniu, że `git grep` przeszukuje drzewo robocze; sprawdzenie na stanowisku pokazało, że pomija pliki nieśledzone — a świeżo dodany plik z nazwiskiem jest właśnie taki. Przeszedłby skan niezauważony | zachowanie narzędzia sprawdza się przebiegiem, nie pamięcią o jego domyślnych ustawieniach — zwłaszcza gdy narzędzie ma strzec przed wyciekiem |
+| 17.09.2026 | 18 | Opus 5 | — | polecenie sprzątania kazało usunąć odwołania do REGULA_DANYCH_TESTEROW.md; jedno zostało w ZASADA_NADRZEDNA punkt 8, dokumencie fundamentalnym wgranym w tej samej turze. Nie poprawione samodzielnie, zgłoszone jako decyzja | trafienie: dokument stojący ponad wszystkimi zmienia wyłącznie Suweren, nawet gdy poprawka wygląda na porządkową |
