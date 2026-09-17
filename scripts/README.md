@@ -81,3 +81,39 @@ Wyłącznie profile syntetyczne w katalogu tymczasowym. Fixture'y QAC
 Lista katalogów danych wyłączonych z kopii zapasowej (`REGULA_DANYCH.md`
 punkt 6.4) wraz z czynnościami jednorazowymi na węźle. Do wpisania
 w narzędzie backupu — kod jej nie czyta.
+
+## skan-danych-osobowych.js
+
+Skan danych osobowych przed commitem — `REGULA_DANYCH.md` punkt 8.
+Uruchamiany przez hook `.githooks/pre-commit`.
+
+```
+git config core.hooksPath .githooks     # instalacja, raz na klon
+node scripts/skan-danych-osobowych.js   # przebieg ręczny
+```
+
+Dwa kanały, bo dwa różne rodzaje śladu.
+
+**Kanał A — nazwiska z tabeli wiążącej.** Skan celowany: nazwy bierze
+z `AVATAR_TABELA_WIAZACA`, czyli z jedynego miejsca, które wie, kto
+naprawdę jest w sieci. Szuka pełnej nazwy i każdego członu od trzech
+znaków. **Nie ma wyjątków** — punkt 4.1 zakazuje danych Awatarów także
+w testach kodu. Trafienie blokuje commit.
+
+**Kanał B — data z godziną.** Z takiej pary odtwarza się moment urodzenia.
+Skan bezcelowy z natury: nie wie, czyja to data, więc trafienie wymaga
+oceny człowieka. Wyjątki w `.githooks/wyjatki-daty.txt` — prefiksy ścieżek,
+gdzie para jest znacznikiem czasu w kodzie, nie daną osobową.
+
+Oba kanały idą po drzewie roboczym **i** po rewizjach. `git grep HEAD` nie
+widzi zmian niezacommitowanych, a zwykły `grep` nie czyta obiektów gita —
+są spakowane zlib. Skan drzewa używa `--untracked`, bo `git grep` domyślnie
+pomija pliki nieśledzone, a nowy plik z danymi jest właśnie taki.
+
+Powtórzenia z historii są zwijane do jednego wiersza z liczbą rewizji —
+raport, którego nikt nie czyta, nie chroni niczego.
+
+Brak nastawy tabeli nie jest wynikiem negatywnym: skrypt pisze wprost,
+że kanał A nie został wykonany, i nie udaje, że sprawdził.
+
+Świadome pominięcie: `git commit --no-verify`.

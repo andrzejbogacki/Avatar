@@ -1,0 +1,4 @@
+#!/bin/sh
+# Hook pre-commit — REGULA_DANYCH.md punkt 8.
+# Instalacja: git config core.hooksPath .githooks
+exec node "$(git rev-parse --show-toplevel)/scripts/skan-danych-osobowych.js"

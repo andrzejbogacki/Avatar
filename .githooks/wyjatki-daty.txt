@@ -1,0 +1,29 @@
+# Wyjątki kanału B (data z godziną) — REGULA_DANYCH.md punkt 8.
+#
+# Prefiksy ścieżek, w których para data+godzina jest znacznikiem czasu
+# w kodzie albo zapisem pracy, nie danymi osobowymi. Kanał A (nazwiska
+# z tabeli wiążącej) NIE ma wyjątków — punkt 4.1 zakazuje danych Awatarów
+# także w testach.
+#
+# Każdy wpis to świadoma decyzja. Dopisanie ścieżki tutaj zdejmuje z niej
+# ochronę kanału B na stałe.
+
+backend/modules/auth/test/
+backend/modules/qac/test/
+backend/modules/ps/test/
+backend/modules/wymiennik/test/
+backend/modules/rezonator/test/
+backend/modules/glosariusz/test/
+backend/modules/dokumentacja/test/
+backend/modules/straznik/test/
+scripts/test/
+docs/komunikacja/
+docs/superpowers/
+docs/ziarna/
+docs/dokumenty/manifest.json
+
+# Przykład formatu wpisywania daty urodzenia w formularzu podglądu —
+# wzór do wypełnienia, nie czyjaś data.
+backend/dev_public/podglad.html
+# Znacznik zbudowania indeksu fleksji glosariusza.
+backend/modules/glosariusz/indeks/formy.json
