@@ -289,7 +289,7 @@ const serwer = http.createServer(async (req, res) => {
         return;
     }
 
-    // Paczki do pobrania — wyłączone domyślnie (REGULA_DANYCH_TESTEROW 6.4).
+    // Paczki do pobrania — wyłączone domyślnie (REGULA_DANYCH 6.4).
     // Paczka backupu mogła nieść profile, a trasa wystawia ją bez logowania.
     // Na czas testu w terenie katalog zostaje pusty, a trasa nie istnieje;
     // włączenie wymaga jawnej zgody operatora przez AVATAR_TRASA_POBIERANIA=1.

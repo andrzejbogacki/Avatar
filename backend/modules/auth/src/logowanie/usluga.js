@@ -46,7 +46,7 @@ class UslugaLogowania {
         const wynik = this.sesje.weryfikujSesje(id_sesji);
         if (wynik.status !== 'aktywna') return wynik;
         // Usunięcie konta kasuje aktywną sesję natychmiast, bez czekania na
-        // restart serwera (REGULA_DANYCH_TESTEROW 6.3). Skrypt usuwania działa
+        // restart serwera (REGULA_DANYCH 6.3). Skrypt usuwania działa
         // w osobnym procesie i do tej mapy nie sięga — brak pliku konta jest
         // sygnałem, który ten proces widzi przy najbliższym żądaniu.
         if (!this.magazyn.istniejeKontoSync(wynik.avatar_id)) {

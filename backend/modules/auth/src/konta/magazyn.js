@@ -41,7 +41,7 @@ class MagazynKont {
     }
 
     // Sprawdzenie synchroniczne — weryfikacja sesji jest synchroniczna,
-    // a musi wiedzieć, czy konto jeszcze istnieje (REGULA_DANYCH_TESTEROW 6.3).
+    // a musi wiedzieć, czy konto jeszcze istnieje (REGULA_DANYCH 6.3).
     istniejeKontoSync(avatar_id) {
         try {
             return existsSync(this.sciezka(avatar_id));

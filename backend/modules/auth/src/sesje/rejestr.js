@@ -34,8 +34,8 @@ class RejestrSesji {
         this.sesje.delete(id);
     }
 
-    // Unieważnienie wszystkich sesji jednego Awatara — usunięcie danych testera
-    // na żądanie (REGULA_DANYCH_TESTEROW 6.3). Zwraca liczbę zdjętych sesji.
+    // Unieważnienie wszystkich sesji jednego Awatara — usunięcie danych Awatara
+    // na żądanie (REGULA_DANYCH 6.3). Zwraca liczbę zdjętych sesji.
     uniewaznijSesjeAwatara(avatar_id) {
         let zdjete = 0;
         for (const [id, sesja] of this.sesje) {
