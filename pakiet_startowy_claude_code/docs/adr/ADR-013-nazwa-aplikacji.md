@@ -36,3 +36,8 @@ Nazwij aplikację **The Source** — jedną nazwą uniwersalną dla wszystkich r
 - **Dystrybucja:** na start PWA z własnego adresu. App Store i Google Play — furtka na później; decyzja o sklepach po zbudowaniu Wymiennika. Zasada 1 w części dotyczącej sklepu obowiązuje od otwarcia furtki.
 - **Adres (O-N2, część druga; O-N1):** thesource.link — jedyny wolny adres z przedimkiem spośród 39 sprawdzonych 2026-09-21. Rejestracja po stronie Suwerena.
 - Warunek otwarty z sekcji Konsekwencje zamknięty tym uzupełnieniem.
+
+## Korekta 2026-09-22
+- **Adres:** thesource.link jest domeną premium — 350,20 USD rocznie w Cloudflare, 382,61 USD w Porkbun, cena odnowienia równa cenie rejestracji. Rejestracja wstrzymana.
+- **Decyzja Suwerena:** na start aplikacja działa pod subdomeną istniejącej domeny andrzejbogacki.cloud, bez dodatkowego kosztu. Nazwa subdomeny — do ustalenia przy wdrożeniu.
+- **Adres docelowy odroczony** do startu aplikacji. Do tego czasu adres w punkcie „Adres" Uzupełnienia 2026-09-21 nie obowiązuje.
