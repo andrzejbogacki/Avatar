@@ -30,3 +30,9 @@ Nazwij aplikację **The Source** — jedną nazwą uniwersalną dla wszystkich r
 - **Koszty:** słowo pospolite — słaba ochrona prawna samej nazwy słownej; przedimek bywa gubiony przy wpisywaniu adresu.
 - **Warunek otwarty:** dostępność domen i kolizje znaków towarowych niesprawdzone (O-N2). Zajęty adres z przedimkiem przywraca wybór między wariantami A, B i C.
 - **Wpływ na dokumenty:** glosariusz — korekta hasła „Źródło" osobnym zapisem; struktura ekranu startowego i kolorystyka — osobne ADR.
+
+## Uzupełnienie 2026-09-21
+- **Znaki towarowe (O-N2, część pierwsza):** sprawdzone w TMview. W klasach 9, 38, 42 i 45 żyje 18 znaków o brzmieniu The Source lub Source, w tym 7 unijnych obowiązujących w Polsce. W sklepach działają aplikacje o tej nazwie; najbliższa znaczeniowo to aplikacja płatnego mentoringu samorozwoju o tej samej nazwie. Ryzyko kolizji znaczeniowej i żądania zaprzestania używania nazwy przyjęte świadomie przez Suwerena. Odróżnienie niesie znak graficzny (O-N4).
+- **Dystrybucja:** na start PWA z własnego adresu. App Store i Google Play — furtka na później; decyzja o sklepach po zbudowaniu Wymiennika. Zasada 1 w części dotyczącej sklepu obowiązuje od otwarcia furtki.
+- **Adres (O-N2, część druga; O-N1):** thesource.link — jedyny wolny adres z przedimkiem spośród 39 sprawdzonych 2026-09-21. Rejestracja po stronie Suwerena.
+- Warunek otwarty z sekcji Konsekwencje zamknięty tym uzupełnieniem.
