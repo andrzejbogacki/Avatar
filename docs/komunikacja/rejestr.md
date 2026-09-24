@@ -14,6 +14,7 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 15 | 08.09.2026 | Opus 5 | 1 | 1 | 5 | 1 | 0 | 0 | 8 | 20 |
 | 15 | 08.09.2026 | Fable 5.1 | 0 | 0 | 2 | 0 | 0 | 0 | 2 | 2 |
 | 16 | 09.09.2026 | Opus 5 | 0 | 3 | 0 | 0 | 0 | 0 | 3 | 3 |
+| 17 | 24.09.2026 | Opus 5 | 0 | 0 | 2 | 0 | 0 | 1 | 3 | 1 |
 
 ## Dziennik
 
@@ -40,3 +41,7 @@ Wzorzec zgłaszany po powtórzeniu litery w trzech panelach. Litera nie powstaje
 | 09.09.2026 | 16 | Opus 5 | E | „sesja programowa" poprawiona w CLAUDE.md na „sesja pracy", podczas gdy nazwy plików Ziaren niosą dalej PROGRAM | nazwa pliku jest identyfikatorem zamkniętego zapisu, nie tekstem dokumentu — reguła nazewnicza jej nie obejmuje |
 | 09.09.2026 | 16 | Opus 5 | — | trzy zatrzymania Code przed dopisaniem czegoś, czego kanon nie daje: czas ważności meldunku bez telefonu, piąte znaczenie słowa sesja, brak liczby dla wieku Ostatniego dowodu Awatara. Wszystkie trzy słuszne | trafienia, nie tarcia — zatrzymanie przed konfabulacją jest wykonaniem reguły |
 | 09.09.2026 | 16 | Opus 5 | E | **wzorzec:** litera E po raz trzeci w trzech kolejnych panelach — 14, 15, 16. To nie jest pojedyncze wystąpienie, tylko stała słabość nazewnicza | nazwę sprawdza się na dwuznaczność przed zapisem do kanonu, nie po zgłoszeniu przez Suwerena |
+| 24.09.2026 | 17 | Opus 5 | O | instrukcja do Draw Things podana z pamięci: położenie koła zębatego i nazwy pozycji w ustawieniach. Interfejsu nie było czym odczytać, a wersja aplikacji była o dziewięć miesięcy starsza, niż zakładałem | interfejsu, którego nie widać, się nie opisuje: najpierw odczyt wersji, potem prośba o zrzut, dopiero na końcu instrukcja |
+| 24.09.2026 | 17 | Opus 5 | O | „dostęp do dysku zewnętrznego działa" wywiedzione z tego, że Suweren zobaczył model na liście w aplikacji. Lista pokazywała katalog do pobrania, nie zasób lokalny; dziennik jądra pokazał odmowy piaskownicy dla tego samego pliku | widok w interfejsie nie jest odczytem stanu; stan bierze się z dziennika albo z systemu plików |
+| 24.09.2026 | 17 | Opus 5 | Z | „wskaż katalog przez systemowe okno wyboru" — zdanie niezrozumiałe, potrzebna osobna tura na wyjaśnienie mechanizmu przepustki piaskownicy | mechanizm nazwany po polsku w tym samym zdaniu, w którym pada polecenie |
+| 24.09.2026 | 17 | Opus 5 | — | trzy zatrzymania przed konfabulacją: nazwy przycisków w wersji 26.0914.0, zachowanie aplikacji przy zmianie katalogu modeli, istnienie modelu nazwanego Opus 5.5. Wszystkie trzy słuszne | trafienia — zatrzymanie przed zgadywaniem jest wykonaniem reguły |
