@@ -14,14 +14,14 @@ Buduj interfejs na palecie wyprowadzonej z osi 3·6·9, w trybie ciemnym i jasny
 | Tło | #2A2723 | #FAF6EE |
 | Tekst | #FAF6EE | #2A2723 |
 | Tekst drugorzędny | #BDB5A8 | #6B655C |
-| Oś 9 — złoto / ochra | #E0B84F | #946F1A |
+| Oś 9 — złoto / ochra | #E0B84F | #8F6B19 |
 | Oś 6 — błękit wodny | #3DA2C7 | #2C7A96 |
 | Oś 3 — miedź | #C77D48 | #A35F2E |
 | Błąd — fiolet | #A47BDF | #6B2FC4 |
 
 ### Zasady wynikowe
 1. **Złoto — oś 9:** akcent przewodni i nagłówki, najsilniejszy na poziomie 3. **Błękit wodny — oś 6:** akcent poziomu 1. **Miedź — oś 3:** akcent poziomu 2. Zgodne z normą przewodów elektrycznych: neutralny niebieski to zero (6), fazowy brązowy to faza (3).
-2. Każdy kolor ma parę wartości, po jednej dla każdego trybu. Para różni się wyłącznie jasnością; barwa i nasycenie są dziedziczone. Złoto w trybie jasnym przechodzi w ochrę, służącą wyłącznie liniom i znakom.
+2. Każdy kolor ma parę wartości, po jednej dla każdego trybu. Para różni się wyłącznie jasnością; barwa i nasycenie są dziedziczone. Złoto w trybie jasnym przechodzi w ochrę.
 3. Zwykły tekst nigdy nie jest w kolorze osi.
 4. Tło nigdy nie jest czystą czernią ani czystą bielą. Zejście oddaje głębia tła: każdy poziom o ton ciemniejszy.
 5. **Nawigacja kolorem:** numery i punktory mają kolor osi, której dotyczy treść, zawsze z drugim nośnikiem (numer albo etykieta osi). Tekst punktu zostaje w kolorze podstawowym.
@@ -40,3 +40,8 @@ Buduj interfejs na palecie wyprowadzonej z osi 3·6·9, w trybie ciemnym i jasny
 - **Pozytywne:** struktura czytelna wzrokiem, zanim padną słowa; wszystkie wartości przechodzą progi kontrastu; błąd widoczny bez łamania ciszy.
 - **Koszty:** każdy kolor ma dwie wartości do utrzymania; fiolet może łagodzić wagę komunikatu.
 - **Otwarte:** O-N18 — kształt znaku błędu, do dobrania razem z logo; O-N19 — wartości tonów tła dla poziomów zejścia.
+
+## Korekta 2026-09-26
+- Ochra w trybie jasnym: #946F1A → #8F6B19. Kontrast na tle #FAF6EE: 4,28 → 4,55 (próg tekstu 4,5).
+- Ochra dopuszczona dla tekstu: cały nagłówek główny w trybie jasnym w ochrze. Skreślono ograniczenie „wyłącznie liniom i znakom”.
+- Decyzja: Andrzej Bogacki.
