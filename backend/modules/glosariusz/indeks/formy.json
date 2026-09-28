@@ -1,8 +1,8 @@
 {
   "wersja": 1,
   "silnik": "regulowy",
-  "zbudowano_ts": "2026-07-13T17:56:50.650Z",
-  "hash_zrodla": "6d07ce103006934fb5a261926f87ffc0a7cf67c8931acd1f99136e538d76169b",
+  "zbudowano_ts": "2026-09-28T08:16:55.192Z",
+  "hash_zrodla": "02449484e2429c8d690eab761ab3ae7862d02de8dbac64a684ac49c438b1d87a",
   "maks_slow": 5,
   "statusy_form": {
     "3 6 9": "podstawowa",
@@ -20,6 +20,7 @@
     "Certyfikacja Zewnętrzna": "przyblizone",
     "Degradacja z wdziękiem": "przyblizone",
     "Demiurg / Jaldabaoth": "przyblizone",
+    "Dzielenie proporcjonalne": "przyblizone",
     "Filtr Prawdy": "przyblizone",
     "Gebo - Wymiennik": "przyblizone",
     "Glosariusz": "przyblizone",
@@ -35,9 +36,11 @@
     "Kwarantanna węzła": "przyblizone",
     "Lila (Boska Gra)": "przyblizone",
     "Loki": "przyblizone",
+    "loosh": "przyblizone",
     "Maja": "przyblizone",
     "Manifest danych": "przyblizone",
     "Mapowanie Prawdy (Certyfikacja Prawdy)": "przyblizone",
+    "Maska": "przyblizone",
     "Matrix": "przyblizone",
     "Meta-Logika": "przyblizone",
     "Mistrz Architekt / Andrzej Bogacki": "przyblizone",
@@ -46,16 +49,20 @@
     "Neuro-Suwerenność 3-6-9": "przyblizone",
     "Nexus": "przyblizone",
     "Obserwator 9 / Meta-Regulator": "przyblizone",
+    "Parametr organizatora": "przyblizone",
+    "Plansza fizyczna": "przyblizone",
     "Podział komórki": "przyblizone",
     "Poświęcalność": "przyblizone",
     "Prawda": "przyblizone",
     "Projekt Avatar": "przyblizone",
     "Protokół Suwerenności": "przyblizone",
+    "QRT (Quantum Rectification Tool)": "przyblizone",
     "Rezonator Kwantowy": "przyblizone",
     "Root-Serwer": "przyblizone",
     "Samsara": "przyblizone",
     "Schumann Resonance (SR)": "przyblizone",
     "Self-healing": "przyblizone",
+    "Sesja gry": "przyblizone",
     "Sovereign Switch": "przyblizone",
     "Status Suwerenny": "przyblizone",
     "Store-and-forward (DTN)": "przyblizone",
@@ -67,10 +74,11 @@
     "Warstwy danych 0/1/2": "przyblizone",
     "Weryfikacja suwerenna": "przyblizone",
     "Wolna Wola": "przyblizone",
+    "Węgiel-12 (6-6-6)": "podstawowa",
     "Węzeł Suwerenny (Sovereign Node)": "przyblizone",
+    "Zatrzask": "przyblizone",
     "Zaufanie": "przyblizone",
     "Zero-Fluff": "przyblizone",
-    "loosh": "przyblizone",
     "Źródło": "przyblizone"
   },
   "formy": {
@@ -5573,6 +5581,636 @@
     "demiurge / jaldabaothe": [
       {
         "termin": "Demiurg / Jaldabaoth",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalne": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": true
+      }
+    ],
+    "dzielenie proporcjonalna": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnem": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnom": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnami": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnach": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalny": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnego": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnemu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnym": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnej": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalną": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnych": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenie proporcjonalnymi": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalne": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalna": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnem": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnom": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnami": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnach": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalny": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnego": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnemu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnym": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnej": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalną": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnych": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzielenia proporcjonalnymi": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalne": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalna": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnem": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnom": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnami": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnach": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalny": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnego": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnemu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnym": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnej": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalną": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnych": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniu proporcjonalnymi": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalne": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalna": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnem": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnom": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnami": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnach": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalny": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnego": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnemu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnym": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnej": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalną": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnych": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniem proporcjonalnymi": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalne": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalna": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnem": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnom": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnami": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnach": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalny": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnego": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnemu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnym": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnej": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalną": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnych": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniom proporcjonalnymi": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalne": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalna": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnem": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnom": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnami": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnach": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalny": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnego": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnemu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnym": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnej": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalną": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnych": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniami proporcjonalnymi": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalne": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalna": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnem": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnom": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnami": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnach": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalny": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnego": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnemu": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnym": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnej": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalną": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnych": [
+      {
+        "termin": "Dzielenie proporcjonalne",
+        "podstawowa": false
+      }
+    ],
+    "dzieleniach proporcjonalnymi": [
+      {
+        "termin": "Dzielenie proporcjonalne",
         "podstawowa": false
       }
     ],
@@ -11372,6 +12010,84 @@
         "podstawowa": false
       }
     ],
+    "loosh": [
+      {
+        "termin": "loosh",
+        "podstawowa": true
+      }
+    ],
+    "loosha": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshowi": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshem": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshu": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshy": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshe": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshi": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshów": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshom": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshami": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshach": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
+    "looshie": [
+      {
+        "termin": "loosh",
+        "podstawowa": false
+      }
+    ],
     "maja": [
       {
         "termin": "Maja",
@@ -12626,6 +13342,72 @@
         "podstawowa": false
       }
     ],
+    "maska": [
+      {
+        "termin": "Maska",
+        "podstawowa": true
+      }
+    ],
+    "masky": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "maski": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "maskie": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "maskę": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "maską": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "masko": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "maskom": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "maskami": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "maskach": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
+    "masce": [
+      {
+        "termin": "Maska",
+        "podstawowa": false
+      }
+    ],
     "matrix": [
       {
         "termin": "Matrix",
@@ -13559,6 +14341,1446 @@
     "obserwatorem 9 / meta-regulatorem": [
       {
         "termin": "Obserwator 9 / Meta-Regulator",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": true
+      }
+    ],
+    "parametr organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametr organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametra organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrowi organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrem organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametru organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametry organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametre organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametri organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrów organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrom organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrami organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrach organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrie organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatora": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatory": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatori": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatorie": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatorę": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatorą": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatoro": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatorom": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatorami": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "parametrze organizatorach": [
+      {
+        "termin": "Parametr organizatora",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": true
+      }
+    ],
+    "plansza fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "plansza fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszy fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszi fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszie fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszę fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszą fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszo fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszom fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszami fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizyczna": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizyczny": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizyczni": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizycznie": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizycznę": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizyczną": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizyczno": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizycznom": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizycznami": [
+      {
+        "termin": "Plansza fizyczna",
+        "podstawowa": false
+      }
+    ],
+    "planszach fizycznach": [
+      {
+        "termin": "Plansza fizyczna",
         "podstawowa": false
       }
     ],
@@ -16178,6 +18400,102 @@
         "podstawowa": false
       }
     ],
+    "qrt (quantum rectification tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": true
+      }
+    ],
+    "qrt (quantum rectificationa tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrt (quantum rectificationowi tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrt (quantum rectificationem tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrta (quantum rectification tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrta (quantum rectificationa tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrta (quantum rectificationowi tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrta (quantum rectificationem tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtowi (quantum rectification tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtowi (quantum rectificationa tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtowi (quantum rectificationowi tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtowi (quantum rectificationem tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtem (quantum rectification tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtem (quantum rectificationa tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtem (quantum rectificationowi tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
+    "qrtem (quantum rectificationem tool)": [
+      {
+        "termin": "QRT (Quantum Rectification Tool)",
+        "podstawowa": false
+      }
+    ],
     "rezonator kwantowy": [
       {
         "termin": "Rezonator Kwantowy",
@@ -17531,6 +19849,666 @@
     "self-healingie": [
       {
         "termin": "Self-healing",
+        "podstawowa": false
+      }
+    ],
+    "sesja gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": true
+      }
+    ],
+    "sesja grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesja grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjy grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesji grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjie grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesję grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesją grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjo grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjom grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjami grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesjach grymi": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi gry": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi grego": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi gremu": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi gra": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi grej": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi grą": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi gre": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi grym": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi grych": [
+      {
+        "termin": "Sesja gry",
+        "podstawowa": false
+      }
+    ],
+    "sesi grymi": [
+      {
+        "termin": "Sesja gry",
         "podstawowa": false
       }
     ],
@@ -22592,6 +25570,12 @@
         "podstawowa": false
       }
     ],
+    "węgiel-12 (6-6-6)": [
+      {
+        "termin": "Węgiel-12 (6-6-6)",
+        "podstawowa": true
+      }
+    ],
     "węzeł suwerenny (sovereign node)": [
       {
         "termin": "Węzeł Suwerenny (Sovereign Node)",
@@ -22685,6 +25669,84 @@
     "węzełem suwerenna (sovereign node)": [
       {
         "termin": "Węzeł Suwerenny (Sovereign Node)",
+        "podstawowa": false
+      }
+    ],
+    "zatrzask": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": true
+      }
+    ],
+    "zatrzaska": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaskowi": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaskem": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzasku": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzasky": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaske": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaski": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzasków": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaskom": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaskami": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaskach": [
+      {
+        "termin": "Zatrzask",
+        "podstawowa": false
+      }
+    ],
+    "zatrzaskie": [
+      {
+        "termin": "Zatrzask",
         "podstawowa": false
       }
     ],
@@ -22805,84 +25867,6 @@
     "zero-fluffie": [
       {
         "termin": "Zero-Fluff",
-        "podstawowa": false
-      }
-    ],
-    "loosh": [
-      {
-        "termin": "loosh",
-        "podstawowa": true
-      }
-    ],
-    "loosha": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshowi": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshem": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshu": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshy": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshe": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshi": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshów": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshom": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshami": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshach": [
-      {
-        "termin": "loosh",
-        "podstawowa": false
-      }
-    ],
-    "looshie": [
-      {
-        "termin": "loosh",
         "podstawowa": false
       }
     ],
