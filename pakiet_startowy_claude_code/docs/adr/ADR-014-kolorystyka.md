@@ -45,3 +45,8 @@ Buduj interfejs na palecie wyprowadzonej z osi 3·6·9, w trybie ciemnym i jasny
 - Ochra w trybie jasnym: #946F1A → #8F6B19. Kontrast na tle #FAF6EE: 4,28 → 4,55 (próg tekstu 4,5).
 - Ochra dopuszczona dla tekstu: cały nagłówek główny w trybie jasnym w ochrze. Skreślono ograniczenie „wyłącznie liniom i znakom”.
 - Decyzja: Andrzej Bogacki.
+
+## Korekta 2026-09-28
+- Znak, tryb jasny: złoty kwadrat w punkcie centralnym ma wypełnienie w jasnym złocie, które na tle #FAF6EE nie osiąga progu znaków 3,0 (2,23 na bokach, 1,91 w środku).
+- Próg spełnia obrys kwadratu w ochrze #8F6B19 (kontrast 4,55), grubości 2 jednostek rysunku przy boku kwadratu 52. Wypełnienie złota bez zmian.
+- Decyzja: Andrzej Bogacki.
